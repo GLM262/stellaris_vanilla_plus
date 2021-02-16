@@ -127,8 +127,8 @@ civic_perscuted_minority = {
         origin = {
             value = origin_rogue_colony
         }
-        NOR = {
-            civics = {
+        civics = {
+            NOR = {
                 value = civic_ideological_dissidents
                 value = civic_plucky_explorers
                 value = civic_rogue_corporation
@@ -168,8 +168,8 @@ civic_ideological_dissidents = {
         origin = {
             value = origin_rogue_colony
         }
-        NOT = {
-            civics = {
+        civics = {
+            NOR = {
                 value = civic_perscuted_minority
                 value = civic_plucky_explorers
                 value = civic_rogue_corporation
@@ -209,8 +209,8 @@ civic_plucky_explorers = {
         origin = {
             value = origin_rogue_colony
         }
-        NOT = {
-            civics = {
+        civics = {
+            NOR = {
                 value = civic_perscuted_minority
                 value = civic_ideological_dissidents
                 value = civic_rogue_corporation
@@ -247,8 +247,8 @@ civic_rogue_corporation = {
         authority = {
             value = auth_corporate
         }
-        NOT = {
-            civics = {
+        civics = {
+            NOR = {
                 value = civic_perscuted_minority
                 value = civic_ideological_dissidents
                 value = civic_plucky_explorers
@@ -315,8 +315,8 @@ civic_free_slaves = {
         origin = {
             value = origin_rogue_colony
         }
-        NOT = {
-            civics = {
+        civics = {
+            NOR = {
                 value = civic_perscuted_minority
                 value = civic_ideological_dissidents
                 value = civic_plucky_explorers
@@ -357,8 +357,8 @@ civic_free_proles = {
         origin = {
             value = origin_rogue_colony
         }
-        NOT = {
-            civics = {
+        civics = {
+            NOR = {
                 value = civic_perscuted_minority
                 value = civic_ideological_dissidents
                 value = civic_plucky_explorers
@@ -399,8 +399,8 @@ civic_liberated_biotrophies = {
         origin = {
             value = origin_rogue_colony
         }
-        NOT = {
-            civics = {
+        civics = {
+            NOR = {
                 value = civic_perscuted_minority
                 value = civic_ideological_dissidents
                 value = civic_plucky_explorers

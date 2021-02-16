@@ -1,7 +1,6 @@
 ifo_transport_assault = {
     entity = pirate_01_pirate_destroyer_entity
     max_speed = @speed_very_fast
-    acceleration = 0.3
     rotation_speed = 0.2
     acceleration = 0.6
     max_hitpoints = @transport_hp
@@ -70,7 +69,6 @@ ifo_transport_assault = {
 ifo_transport_slave = {
     entity = pirate_01_pirate_destroyer_entity
     max_speed = @speed_very_fast
-    acceleration = 0.3
     rotation_speed = 0.2
     acceleration = 0.6
     max_hitpoints = @transport_hp
@@ -137,7 +135,6 @@ ifo_transport_slave = {
 ifo_transport_clone = {
     entity = pirate_01_pirate_destroyer_entity
     max_speed = @speed_very_fast
-    acceleration = 0.3
     rotation_speed = 0.2
     acceleration = 0.6
     max_hitpoints = @transport_hp
@@ -206,7 +203,7 @@ ifo_transport_clone = {
 ifo_transport_robotic = {
     entity = pirate_01_pirate_destroyer_entity
     max_speed = @speed_very_fast
-    acceleration = 0.3
+    
     rotation_speed = 0.2
     acceleration = 0.6
     max_hitpoints = @transport_hp
@@ -277,7 +274,7 @@ ifo_transport_robotic = {
 ifo_transport_psionic = {
     entity = pirate_01_pirate_destroyer_entity
     max_speed = @speed_very_fast
-    acceleration = 0.3
+    
     rotation_speed = 0.2
     acceleration = 0.6
     max_hitpoints = @transport_hp
@@ -352,7 +349,7 @@ ifo_transport_psionic = {
 ifo_transport_xenomorph = {
     entity = pirate_01_pirate_destroyer_entity
     max_speed = @speed_very_fast
-    acceleration = 0.3
+    
     rotation_speed = 0.2
     acceleration = 0.6
     max_hitpoints = @transport_hp
@@ -409,7 +406,7 @@ ifo_transport_xenomorph = {
 ifo_transport_gene = {
     entity = pirate_01_pirate_destroyer_entity
     max_speed = @speed_very_fast
-    acceleration = 0.3
+    
     rotation_speed = 0.2
     acceleration = 0.6
     max_hitpoints = @transport_hp
@@ -475,7 +472,7 @@ ifo_transport_gene = {
 ifo_transport_mach1 = {
     entity = pirate_01_pirate_destroyer_entity
     max_speed = @speed_very_fast
-    acceleration = 0.3
+    
     rotation_speed = 0.2
     acceleration = 0.6
     max_hitpoints = @transport_hp
@@ -528,7 +525,7 @@ ifo_transport_mach1 = {
 ifo_transport_mach2 = {
     entity = pirate_01_pirate_destroyer_entity
     max_speed = @speed_very_fast
-    acceleration = 0.3
+    
     rotation_speed = 0.2
     acceleration = 0.6
     max_hitpoints = @transport_hp
@@ -587,7 +584,7 @@ ifo_transport_mach2 = {
 ifo_transport_mach3 = {
     entity = pirate_01_pirate_destroyer_entity
     max_speed = @speed_very_fast
-    acceleration = 0.3
+    
     rotation_speed = 0.2
     acceleration = 0.6
     max_hitpoints = @transport_hp
