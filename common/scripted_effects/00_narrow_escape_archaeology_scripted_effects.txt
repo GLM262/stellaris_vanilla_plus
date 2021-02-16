@@ -1,0 +1,82 @@
+site_narrow_escape_destroyed_homeworld_random_events = {
+    random_list = {
+        8 = {
+            fleet_event = {
+                id = narrow_escape_archaeology.1010
+            }
+        }
+        8 = {
+            fleet_event = {
+                id = narrow_escape_archaeology.1020
+            }
+        }
+        12 = {
+            fleet_event = {
+                id = narrow_escape_archaeology.1030
+            }
+        }
+        12 = {
+            fleet_event = {
+                id = narrow_escape_archaeology.1040
+            }
+        }
+        10 = {
+            fleet_event = {
+                id = narrow_escape_archaeology.1050
+            }
+        }
+        10 = {
+            fleet_event = {
+                id = narrow_escape_archaeology.1060
+            }
+        }
+        5 = {
+            fleet_event = {
+                id = narrow_escape_archaeology.1070
+            }
+        }
+        35 = {
+        }
+    }
+}
+site_narrow_escape_mysterious_moon_random_events = {
+    random_list = {
+        8 = {
+            fleet_event = {
+                id = narrow_escape_archaeology.2010
+            }
+        }
+        8 = {
+            fleet_event = {
+                id = narrow_escape_archaeology.2020
+            }
+        }
+        12 = {
+            fleet_event = {
+                id = narrow_escape_archaeology.2030
+            }
+        }
+        12 = {
+            fleet_event = {
+                id = narrow_escape_archaeology.2040
+            }
+        }
+        10 = {
+            fleet_event = {
+                id = narrow_escape_archaeology.2050
+            }
+        }
+        10 = {
+            fleet_event = {
+                id = narrow_escape_archaeology.2060
+            }
+        }
+        5 = {
+            fleet_event = {
+                id = narrow_escape_archaeology.2070
+            }
+        }
+        35 = {
+        }
+    }
+}

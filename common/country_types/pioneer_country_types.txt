@@ -1,0 +1,23 @@
+pioneer_crystal = {
+    attack_unarmed_orbital_stations = no
+    government = no
+    observable = no
+    ai = {
+        enabled = no
+    }
+    faction = {
+        hostile = no
+        needs_border_access = no
+        generate_borders = no
+        needs_colony = no
+    }
+    modules = {
+        exclusive_diplomacy_module = {
+        }
+        basic_technology_module = {
+        }
+        standard_event_module = {
+        }
+    }
+    destroys_starbases = yes
+}

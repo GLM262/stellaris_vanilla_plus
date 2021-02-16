@@ -1,0 +1,41 @@
+ifo_cb_incorporation = {
+    show_in_diplomacy = yes
+    show_notification = no
+    potential = {
+        has_federation = yes
+        is_federation_leader = yes
+        federation = {
+            has_federation_type = ifo_fleet_federation
+        }
+    }
+    is_valid = {
+        from = {
+            is_country_type = default
+            NOT = {
+                is_in_federation_with = from
+            }
+        }
+        has_total_war_cb = no
+    }
+}
+ifo_cb_secession = {
+    show_in_diplomacy = yes
+    show_notification = yes
+    potential = {
+        has_federation = yes
+        federation = {
+            has_federation_type = ifo_fleet_federation
+        }
+        has_country_flag = asked_to_leave_hegemony
+        NOT = {
+            has_country_flag = failed_hegemony_rebellion
+        }
+    }
+    is_valid = {
+        from = {
+            is_in_federation_with = prev
+            is_federation_leader = yes
+        }
+        has_total_war_cb = no
+    }
+}

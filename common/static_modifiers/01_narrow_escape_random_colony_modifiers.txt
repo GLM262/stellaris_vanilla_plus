@@ -1,0 +1,103 @@
+@narrow_escape_good_decrease_1 = -0.40
+@narrow_escape_good_decrease_2 = -0.40
+@narrow_escape_good_decrease_3 = -0.40
+@narrow_escape_good_decrease_4 = -0.40
+@narrow_escape_good_increase_1 = 0.5
+@narrow_escape_good_increase_2 = 0.5
+@narrow_escape_good_increase_3 = 0.5
+@narrow_escape_good_increase_4 = 0.5
+@narrow_escape_great_decrease_1 = -0.65
+@narrow_escape_great_decrease_2 = -0.65
+@narrow_escape_great_decrease_3 = -0.65
+@narrow_escape_great_decrease_4 = -0.65
+@narrow_escape_great_increase_1 = 1.5
+@narrow_escape_great_increase_2 = 1.5
+@narrow_escape_great_increase_3 = 1.5
+@narrow_escape_great_increase_4 = 1.5
+@narrow_escape_instant_income_1 = 6
+@narrow_escape_instant_loss_1 = -9
+@narrow_escape_massive_increase_1 = 3
+narrow_escape_random_colony_1000 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_produces_mult = @narrow_escape_massive_increase_1
+}
+narrow_escape_random_colony_1010 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_produces_mult = @narrow_escape_great_increase_4
+}
+narrow_escape_random_colony_1020 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_produces_mult = @narrow_escape_good_increase_4
+}
+narrow_escape_random_colony_1030 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_energy_produces_mult = @narrow_escape_great_increase_3
+}
+narrow_escape_random_colony_1040 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_minerals_produces_mult = @narrow_escape_great_increase_2
+}
+narrow_escape_random_colony_1050 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_food_produces_mult = @narrow_escape_great_increase_1
+}
+narrow_escape_random_colony_1060 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_alloys_produces_mult = @narrow_escape_good_increase_3
+}
+narrow_escape_random_colony_1070 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_consumer_goods_produces_mult = @narrow_escape_good_increase_2
+}
+narrow_escape_random_colony_1080 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_physics_research_produces_mult = @narrow_escape_good_increase_1
+    planet_jobs_society_research_produces_mult = @narrow_escape_good_increase_1
+    planet_jobs_engineering_research_produces_mult = @narrow_escape_good_increase_1
+}
+narrow_escape_random_colony_1090 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_produces_mult = @narrow_escape_instant_income_1
+}
+narrow_escape_random_colony_2020 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_city_ruins.dds"
+    planet_stability_add = -40
+}
+narrow_escape_random_colony_2010 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_produces_mult = @narrow_escape_great_decrease_4
+}
+narrow_escape_random_colony_2000 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_produces_mult = @narrow_escape_good_decrease_4
+}
+narrow_escape_random_colony_2030 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_energy_produces_mult = @narrow_escape_great_decrease_3
+}
+narrow_escape_random_colony_2040 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_minerals_produces_mult = @narrow_escape_great_decrease_2
+}
+narrow_escape_random_colony_2050 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_food_produces_mult = @narrow_escape_great_decrease_1
+}
+narrow_escape_random_colony_2060 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_alloys_produces_mult = @narrow_escape_good_decrease_3
+}
+narrow_escape_random_colony_2070 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_consumer_goods_produces_mult = @narrow_escape_good_decrease_2
+}
+narrow_escape_random_colony_2080 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_physics_research_produces_mult = @narrow_escape_good_decrease_1
+    planet_jobs_society_research_produces_mult = @narrow_escape_good_decrease_1
+    planet_jobs_engineering_research_produces_mult = @narrow_escape_good_decrease_1
+}
+narrow_escape_random_colony_2090 = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    planet_jobs_produces_mult = @narrow_escape_instant_loss_1
+}

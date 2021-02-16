@@ -1,0 +1,15 @@
+pm_frontier_target = {
+    spawn_chance = {
+    }
+    modifier = "frontier_target"
+}
+pm_rogue_target = {
+    spawn_chance = {
+    }
+    modifier = "rogue_target"
+}
+pm_hegira_target = {
+    spawn_chance = {
+    }
+    modifier = "hegira_target"
+}

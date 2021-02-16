@@ -1,0 +1,13 @@
+@pdf_starting_fleet_size = 5
+@pdf_construction_speed_1 = 55
+@pdf_construction_speed_2 = 45
+@pdf_construction_speed_3 = 30
+@pdf_ship_alloy_cost_1 = 30
+@pdf_ship_alloy_cost_2 = 50
+@pdf_ship_alloy_cost_3 = 75
+@pdf_ship_alloy_cost_4 = 100
+@pdf_ship_alloy_cost_5 = 130
+@pdf_ship_alloy_cost_6 = 160
+@pdf_system_ship_upkeep_energy = 0.4
+@pdf_system_ship_upkeep_alloys = 0.01
+@pdf_system_ship_evasion = 70

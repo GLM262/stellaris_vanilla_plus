@@ -1,0 +1,50 @@
+# This file contains all the triggers for the necromancy events.
+# This = owner of fleet
+# From = fleet
+# FromFrom = planet (if any)
+on_fleet_auto_move_arrival = {
+    events = {
+        necromancy.10
+        necromancy.11
+        necromancy.20
+        necromancy.21
+    }
+}
+# This triggers country_event for the attacker upon victory
+# (Before controller is switched)
+# This = country, leader attacker
+# From = country, planet owner
+# FromFrom = planet
+# IDENTITIES: attacker is the side that "IsHostile" to
+# the planet controller; e.g. spawned monster armies
+# are attackers, but if they win and the player attempts
+# to retake the planet, the player is the attacker
+on_planet_attackers_win = {
+    events = {
+        necromancy.30 # This rewards players with reanimated armies
+    }
+}
+# Triggers country_event for the defender upon victory
+# Root = country, planet owner
+# From = country, attack leader
+# FromFrom = planet
+on_planet_defenders_win = {
+    events = {
+        necromancy.40
+    }
+}
+# Executed as a leader has died
+# This = Country
+# From = Leader
+on_leader_death = {
+    events = {
+        necromancy.50
+        necromancy.51
+    }
+}
+# Help AI empires using reanimated armies
+on_game_start_country = {
+    events = {
+        necromancy.60
+    }    
+}

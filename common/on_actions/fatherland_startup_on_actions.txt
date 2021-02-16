@@ -1,0 +1,51 @@
+on_game_start_country = {
+    events = {
+        fatherland_setup.100 #Fatherland Mod Init
+        fatherland_hegira.001 #Hegira init
+    }
+}
+on_country_destroyed = {
+    events = {
+        fatherland_frontier.999 #Reduces Frontier World Variable - Sometimes these screw up so census event also tickets on 10 year pulse or via edict options
+        fatherland_rogue.999 #Reduces Frontier World Variable
+        fatherland_hegira.999 #Reduces Hegira State Variable    
+    }   
+}
+# A colony has been destroyed. Called just before owner and controller is cleared
+# Scope = Planet
+on_colony_destroyed = {
+    events = {
+        fatherland_hegira.102 #Homeworld goes boom
+    }
+}
+################################### Rogue Colony Activator - Checks what speed flag is set (Default every 10, can be changed in settings) Used instead of MTTH for performance
+on_yearly_pulse_country = {
+    events = {
+        fatherland_rogue.96
+        fatherland_hegira.96
+    }
+}
+# this = country
+on_bi_yearly_pulse_country = {
+    events = {
+        fatherland_rogue.97
+        fatherland_hegira.97
+    }
+}
+# this = country
+on_five_year_pulse_country = {
+    events = {
+        fatherland_rogue.98
+        fatherland_hegira.98
+    }
+}
+# this = country
+on_decade_pulse_country = {
+    events = {
+        fatherland_rogue.99
+        fatherland_rogue.997 # Rogue Colony Census Event
+        fatherland_hegira.99
+        fatherland_hegira.997 # Hegira State Census Event
+        fatherland_normalempires.101 # Normal Empire Census Event
+    }
+}

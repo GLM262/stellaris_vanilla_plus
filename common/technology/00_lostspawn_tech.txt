@@ -1,0 +1,9 @@
+lostspawn_tech_tech_priest = {
+    cost = @tier1cost2
+    area = society
+    tier = 2
+    category = {
+        statecraft
+    }
+    weight = 0
+}

@@ -1,0 +1,125 @@
+entity = {
+    name = "watcher_01_ruined_base_station_entity"
+    pdxmesh = "tecdawn_watcher_station_small_broken_mesh"
+    meshsettings = {
+        index = 0
+        texture_diffuse = "tecdawn_watcher_station_small_ruined_diffuse.dds"
+    }
+    default_state = "idle"
+    state = {
+        name = "idle"
+        animation = "idle"
+        start_event = {
+            trigger_once = yes
+            sound = {
+                soundeffect = "amb_damaged_generic_station_idle"
+            }
+        }
+    }
+    game_data = {
+        shader_type = ship
+        emissive_recolor_crunch = 2.0
+        size = 75
+    }
+    scale = 1
+    cull_radius = 1.0
+}
+entity = {
+    name = "watcher_01_ruined_station_entity"
+    locator = {
+        name = "loc3001"
+        position = {
+            0
+            0
+            0
+        }
+        rotation = {
+            90
+            30
+            0
+        }
+    }
+    attach = {
+        "loc3001" = "watcher_01_ruined_base_station_entity"
+    }
+    scale = 0.5
+    cull_radius = 1.0
+}
+entity = {
+    name = "watcher_01_base_station_entity"
+    pdxmesh = "tecdawn_watcher_station_small_mesh"
+    meshsettings = {
+        index = 0
+        texture_diffuse = "tecdawn_watcher_station_small_diffuse.dds"
+    }
+    default_state = "idle"
+    state = {
+        name = "idle"
+        animation = "idle"
+        start_event = {
+            trigger_once = yes
+            sound = {
+                soundeffect = amb_terraforming_station_active
+            }
+        }
+    }
+    game_data = {
+        shader_type = ship
+        emissive_recolor_crunch = 2.0
+        size = 75
+    }
+    scale = 1
+    cull_radius = 1.0
+}
+entity = {
+    name = "watcher_01_active_station_entity"
+    locator = {
+        name = "loc3001"
+        position = {
+            0
+            0
+            0
+        }
+        rotation = {
+            90
+            0
+            0
+        }
+    }
+    attach = {
+        "loc3001" = "watcher_01_base_station_entity"
+    }
+    scale = 0.5
+    cull_radius = 1.0
+}
+entity = {
+    name = "tecdawn_dawn_engine_base_entity"
+    pdxmesh = "tecdawn_watcher_core_mesh"
+    meshsettings = {
+        index = 0
+        texture_diffuse = "tecdawn_watcher_core_diffuse.dds"
+    }
+    scale = 1
+    cull_radius = 1.0
+}
+entity = {
+    name = "tecdawn_dawn_engine_entity"
+    locator = {
+        name = "loc3001"
+        position = {
+            0
+            0
+            0
+        }
+        rotation = {
+            90
+            0
+            0
+        }
+    }
+    attach = {
+        "loc3001" = "tecdawn_dawn_engine_base_entity"
+    }
+    scale = 0.5
+    cull_radius = 1.0
+}

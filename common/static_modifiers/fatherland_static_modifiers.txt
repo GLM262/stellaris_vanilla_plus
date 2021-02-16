@@ -1,0 +1,145 @@
+fatherland_recent_census = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
+}
+frontier_target = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
+    pop_growth_speed = 0.01
+}
+hegira_target = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
+    pop_growth_speed = 0.01
+}
+rogue_target = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
+    pop_growth_speed = 0.01
+}
+frontier_colonial_world = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
+    pop_environment_tolerance = 0.20
+    pop_growth_speed = 0.10
+}
+rogue_colonial_world = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
+    pop_environment_tolerance = 0.30
+    pop_growth_speed = 0.20
+}
+hegira_colonial_world = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
+    pop_environment_tolerance = 0.20
+    pop_growth_speed = 0.10
+}
+syncretic_prole_repression = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
+}
+fatherland_outpost_bonus = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
+    starbase_outpost_cost_mult = -0.75
+    starbases_upkeep_mult = -0.33
+    empire_size_mult = -0.5
+}
+fatherland_the_hegira = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
+    country_resettlement_cost_mult = -0.50
+}
+extreme_biotrophy_security = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
+}
+increased_biotrophy_security = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
+}
+land_of_the_free = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_federation_fleet.dds"
+    damage_vs_country_type_swarm_mult = 0.5
+    damage_vs_country_type_extradimensional_mult = 0.5
+    damage_vs_country_type_extradimensional_2_mult = 0.5
+    damage_vs_country_type_extradimensional_3_mult = 0.5
+    damage_vs_country_type_ai_empire_mult = 0.5
+    damage_vs_country_type_gray_goo_mult = 0.5
+    country_influence_produces_add = 2
+}
+mandate_of_heaven = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_consecrated_worlds.dds"
+    megastructure_build_speed_mult = 0.25
+    pop_government_ethic_attraction = 0.2
+}
+for_the_motherland = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_martial_law.dds"
+    army_morale = 0.25
+    army_attack_health_mult = 0.20
+    planet_army_build_speed_mult = 0.25
+}
+legacy_of_intermarium = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_victorious_army.dds"
+    ship_home_territory_fire_rate_mult = 0.2
+    ship_speed_mult = 0.2
+}
+legacy_of_scandinavia = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_arctic_planet.dds"
+    planet_building_build_speed_mult = 0.2
+    planet_buildings_cost_mult = -0.2
+}
+legacy_of_nippon = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_arcology_project.dds"
+    all_technology_research_speed = 0.05
+    country_unity_produces_mult = 0.1
+}
+britannia_rules_the_stars = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_ship_in_orbit.dds"
+    country_naval_cap_add = 50
+    country_command_limit_add = 10
+    ship_armor_mult = 0.05
+}
+legacy_of_dharma = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_natural_beauty.dds"
+    planet_amenities_mult = 0.1
+    trade_value_mult = 0.1
+}
+the_caliphate = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_artist_monument_erected.dds"
+    pop_happiness = 0.1
+    spiritualist_attraction = 0.2
+    country_energy_produces_mult = 0.05
+}
+legacy_of_brazil = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_lush.dds"
+    country_base_food_produces_add = 0.1
+    pc_tropical_habitability = 0.2
+}
+legacy_of_germany = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_resources.dds"
+    country_alloys_produces_mult = 0.1
+    country_engineering_tech_research_speed = 0.15
+    starbase_buildings_cost_mult = -0.1
+}
+legacy_of_africa = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_arid_planet.dds"
+    country_alloys_produces_mult = 0.1
+    pc_savannah_habitability = 0.2
+    deposit_blockers_cost_mult = -0.2
+}
+legacy_of_gran_columbia = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_arid_planet.dds"
+    pop_factions_influence_produces_mult = 0.1
+    planet_colony_development_speed_mult = 0.33
+}
+legacy_of_oceania = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_arid_planet.dds"
+    pop_environment_tolerance = 0.10
+    starbase_outpost_cost_mult = -0.2
+    empire_size_mult = 0.2
+}
+galactic_bulwark = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_federation_fleet.dds"
+    damage_vs_country_type_swarm_mult = 10.0
+    all_technology_research_speed = 10
+    damage_vs_country_type_extradimensional_mult = 10.0
+    damage_vs_country_type_extradimensional_2_mult = 10.0
+    damage_vs_country_type_extradimensional_3_mult = 10.0
+    damage_vs_country_type_ai_empire_mult = 10.0
+    damage_vs_country_type_gray_goo_mult = 10.0
+    ship_home_territory_fire_rate_mult = 10
+    shipclass_starbase_hull_mult = 1
+    shipclass_starbase_damage_mult = 1
+    bio_pop_growth_speed = 0.5
+    ship_fire_rate_mult = 0.5
+}

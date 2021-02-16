@@ -1,0 +1,98 @@
+caretaker_overclocked_cloning_vats = {
+    pop_growth_speed = 0.05
+}
+caretaker_destroyed_databanks = {
+    planet_jobs_unity_produces_mult = 0.2
+}
+caretaker_knows_awful_truth = {
+    planet_jobs_unity_produces_mult = 0.1
+}
+caretaker_fortitude = {
+    planet_jobs_unity_produces_mult = 0.2
+}
+caretaker_promoted_monitororder = {
+    pop_ethic_spiritualist_attraction_mult = -0.5
+    pop_ethic_xenophile_attraction_mult = -0.5
+    country_base_influence_produces_add = -0.5
+}
+caretaker_promoted_independencemovement = {
+    pop_ethic_xenophobe_attraction_mult = -0.5
+    pop_ethic_materialist_attraction_mult = -0.5
+    country_base_influence_produces_add = -1
+}
+caretaker_suppressed_independencemovement = {
+    pop_ethic_xenophobe_attraction_mult = 0.25
+    pop_ethic_materialist_attraction_mult = 0.25
+    country_base_influence_produces_add = -0.5
+}
+caretaker_hacked_hub_1 = {
+    planet_jobs_consumer_goods_produces_mult = 0.1
+    planet_amenities_mult = -0.1
+    icon = "gfx/interface/icons/planet_modifiers/pm_glitchy_matrix.dds"
+    icon_frame = 2
+}
+caretaker_hacked_hub_2 = {
+    planet_jobs_consumer_goods_produces_mult = 0.1
+    planet_jobs_alloys_produces_mult = 0.1
+    planet_amenities_mult = -0.1
+    pop_happiness = -0.05
+    icon = "gfx/interface/icons/planet_modifiers/pm_glitchy_matrix.dds"
+    icon_frame = 2
+}
+caretaker_hacked_hub_3a = {
+    planet_jobs_physics_research_produces_mult = 0.1
+    planet_jobs_society_research_produces_mult = 0.1
+    planet_jobs_engineering_research_produces_mult = 0.1
+    planet_amenities_mult = -0.1
+    icon = "gfx/interface/icons/planet_modifiers/pm_glitchy_matrix.dds"
+    icon_frame = 2
+}
+caretaker_hacked_hub_3b = {
+    pop_growth_speed = 0.1
+    planet_amenities_mult = -0.1
+    icon = "gfx/interface/icons/planet_modifiers/pm_glitchy_matrix.dds"
+    icon_frame = 2
+}
+caretaker_unhappy_settler = {
+    pop_happiness = -0.75
+}
+pm_caretaker_free_settler_discord = {
+    planet_stability_add = -10
+    icon = "gfx/interface/icons/planet_modifiers/pm_burning_settlement.dds"
+    icon_frame = 3
+}
+pm_caretaker_core_restarting = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_caretaker_core_content.dds"
+    icon_frame = 2
+}
+pm_caretaker_core_pleased = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_caretaker_core_pleased.dds"
+    icon_frame = 1
+}
+pm_caretaker_core_content = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_caretaker_core_content.dds"
+    icon_frame = 2
+}
+pm_caretaker_core_annoyed = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_caretaker_core_annoyed.dds"
+    icon_frame = 2
+}
+pm_caretaker_core_angry = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_caretaker_core_angry.dds"
+    icon_frame = 3
+}
+pop_natural_born = {
+    pop_happiness = 0.1
+}
+caretaker_country_boost = {
+    country_naval_cap_add = 200
+    planet_stability_add = 10
+    planet_amenities_no_happiness_add = 20
+    country_base_alloys_produces_add = 10
+    country_base_food_produces_add = 20
+    country_base_consumer_goods_produces_add = 20
+    country_base_energy_produces_add = 50
+    country_base_rare_crystals_produces_add = 5
+    country_base_exotic_gases_produces_add = 5
+    country_base_volatile_motes_produces_add = 5
+}

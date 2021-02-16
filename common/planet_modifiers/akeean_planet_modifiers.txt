@@ -1,0 +1,15 @@
+pm_akeean_shield_active = {
+    spawn_chance = {
+    }
+    modifier = "akeean_shield_active"
+}
+pm_akeean_shield_inactive = {
+    spawn_chance = {
+    }
+    modifier = "akeean_shield_inactive"
+}
+pm_akeean_shield_reactor_refund = {
+    spawn_chance = {
+    }
+    modifier = "akeean_shield_reactor_refund"
+}

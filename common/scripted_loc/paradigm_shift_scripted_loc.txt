@@ -1,0 +1,41 @@
+defined_text = {
+    name = ParadigmShiftKellectorsOppositePlanet
+    text = {
+        trigger = {
+            has_authority = auth_hive_mind
+        }
+        localization_key = "pc_machine"
+    }
+    text = {
+        trigger = {
+            has_authority = auth_machine_intelligence
+        }
+        localization_key = "pc_hive"
+    }
+    text = {
+        trigger = {
+            NOR = {
+                has_authority = auth_machine_intelligence
+                has_authority = auth_hive_mind
+            }
+        }
+        localization_key = "pc_nuked"
+    }
+}
+defined_text = {
+    name = ParadigmShiftKellectorsGetTask8PlanetTerraformed
+    text = {
+        trigger = {
+            has_planet_flag = paradigm_shift_changed_planet
+        }
+        localization_key = "paradigm_shift.3089.changed_planet"
+    }
+    text = {
+        trigger = {
+            NOT = {
+                has_planet_flag = paradigm_shift_changed_planet
+            }
+        }
+        localization_key = "paradigm_shift.3089.original_planet"
+    }
+}

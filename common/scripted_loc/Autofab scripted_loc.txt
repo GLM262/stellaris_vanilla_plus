@@ -1,0 +1,34 @@
+defined_text = {
+    name = GetAutofabConstruction
+    text = {
+        trigger = {
+            has_planet_flag = foundry_expanding
+        }
+        localization_key = foundry_expanding
+    }
+    text = {
+        trigger = {
+            NOT = {
+                has_planet_flag = autofab_automation
+            }
+        }
+        localization_key = automation_off
+    }
+}
+defined_text = {
+    name = GetAutofabConvFlag
+    text = {
+        trigger = {
+            has_planet_flag = autofab_ignore_vanilla
+        }
+        localization_key = ignoring
+    }
+    text = {
+        trigger = {
+            NOT = {
+                has_planet_flag = autofab_ignore_vanilla
+            }
+        }
+        localization_key = not_ignoring
+    }
+}

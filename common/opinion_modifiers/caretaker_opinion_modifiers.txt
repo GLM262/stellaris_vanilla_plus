@@ -1,0 +1,63 @@
+caretaker_secession_request_granted = {
+    accumulative = no
+    opinion = {
+        base = 20
+    }
+}
+caretaker_secession_request_denied = {
+    accumulative = no
+    opinion = {
+        base = -30
+    }
+}
+caretaker_seceded_against_our_wishes = {
+    accumulative = no
+    opinion = {
+        base = -20
+    }
+}
+caretaker_diplo_request_granted = {
+    accumulative = yes
+    opinion = {
+        base = 20
+    }
+    decay = {
+        base = -1
+    }
+}
+caretaker_diplo_request_denied = {
+    accumulative = yes
+    opinion = {
+        base = -20
+    }
+    decay = {
+        base = 1
+    }
+}
+caretaker_pops_stolen = {
+    accumulative = yes
+    opinion = {
+        base = -40
+    }
+    decay = {
+        base = 1
+    }
+}
+caretaker_resources_stolen = {
+    accumulative = yes
+    opinion = {
+        base = -20
+    }
+    decay = {
+        base = 1
+    }
+}
+caretaker_fleet_stolen = {
+    accumulative = yes
+    opinion = {
+        base = -40
+    }
+    decay = {
+        base = 1
+    }
+}

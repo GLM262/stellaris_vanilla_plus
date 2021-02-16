@@ -1,0 +1,337 @@
+namespace = fatherland_frontier
+country_event = {
+    id = fatherland_frontier.100
+    title = "fatherland_frontier.100_name"
+    desc = "fatherland_frontier.100_desc"
+    picture = GFX_evt_colony_settlement
+    is_triggered_only = yes
+    trigger = {
+        has_global_flag = fatherland_active
+        has_global_flag = fatherland_frontiers_active
+        is_country_type = default
+        NOT = {
+            has_authority = auth_hive_mind
+        }
+        NOT = {
+            has_authority = auth_machine_intelligence
+        }
+        OR = {
+            AND = {
+                is_ai = no
+                check_variable = {
+                    which = fatherland_currentglobal_fw
+                    value < fatherland_globalmax_fw
+                }
+                check_variable = {
+                    which = fatherland_playercurrent_fw
+                    value < fatherland_playermax_fw
+                }
+            }
+            AND = {
+                is_ai = yes
+                check_variable = {
+                    which = fatherland_currentglobal_fw
+                    value < fatherland_globalmax_fw
+                }
+                check_variable = {
+                    which = fatherland_aicurrent_fw
+                    value < fatherland_aimax_fw
+                }
+                OR = {
+                    AND = {
+                        has_origin = origin_rogue_colony
+                        has_global_flag = fatherland_rogue_fw
+                    }
+                    NOT = {
+                        has_origin = origin_rogue_colony
+                    }
+                }
+            }
+        }
+    }
+    immediate = {
+        save_global_event_target_as = fatherland_empire
+        random_owned_pop = {
+            limit = {
+                NOR = {
+                    pop_has_trait = trait_syncretic_proles
+                    is_pop_category = pre_sapients
+                    is_enslaved = yes
+                    is_being_purged = yes
+                }
+            }
+            species = {
+                save_global_event_target_as = fatherland_species
+            }
+            set_pop_flag = fatherland_hegira_pop
+        }
+        random_system = {
+            limit = {
+                exists = space_owner
+                space_owner = {
+                    is_country_type = default
+                    is_same_value = event_target:fatherland_empire
+                }
+                any_neighbor_system = {
+                    NOT = {
+                        exists = space_owner
+                    }
+                }
+            }
+            save_event_target_as = fatherland_frontier_edgesystem
+        }
+        random_system = {
+            limit = {
+                NOT = {
+                    exists = space_owner
+                }
+                distance = {
+                    source = event_target:fatherland_frontier_edgesystem
+                    use_bypasses = yes
+                    min_jumps = 1
+                    max_jumps = 4
+                }
+                any_system_planet = {
+                    habitable_planet = yes
+                }
+            }
+            random_system_planet = {
+                limit = {
+                    habitable_planet = yes
+                    OR = {
+                        has_global_flag = fatherland_dangerousworlds_on
+                        NOR = {
+                            has_modifier = "holy_planet"
+                            solar_system = {
+                                has_star_flag = hostile_system
+                            }
+                        }
+                    }
+                }
+                set_planet_flag = frontier_target
+                save_global_event_target_as = frontier_event_planet
+                add_modifier = {
+                    modifier = frontier_target
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_frontier.100.a
+        trigger = {
+            any_planet = {
+                has_planet_flag = frontier_target
+            }
+        }
+        hidden_effect = {
+            if = {
+                limit = {
+                    has_global_flag = fatherland_poploss_on
+                }
+                capital_scope = {
+                    random_pop = {
+                        limit = {
+                            has_pop_flag = fatherland_frontier_pop
+                        }
+                        kill_pop = yes
+                    }
+                }
+            }
+            custom_tooltip = "fatherland_hegira.100.frontier.tooltip"
+            create_country = {
+                name = event_target:frontier_event_planet
+                authority = root
+                civics = {
+                    civic = civic_frontier_world
+                    civic = random
+                }
+                origin = origin_frontier_world
+                species = event_target:fatherland_species
+                ignore_initial_colony_error = yes
+                ethos = root
+                flag = random
+                type = default
+                effect = {
+                    copy_techs_from = {
+                        target = root
+                    }
+                    save_global_event_target_as = frontier_world_country
+                    set_graphical_culture = event_target:fatherland_empire
+                    if = {
+                        limit = {
+                            has_global_flag = fatherland_instantcomms
+                        }
+                        establish_communications_no_message = event_target:fatherland_empire
+                    }
+                    if = {
+                        limit = {
+                            has_global_flag = fatherland_bonusresources
+                        }
+                        add_resource = {
+                            minerals = 100
+                        }
+                        add_resource = {
+                            energy = 100
+                        }
+                        add_resource = {
+                            food = 100
+                        }
+                        add_resource = {
+                            consumer_goods = 100
+                        }
+                        add_resource = {
+                            alloys = 100
+                        }
+                    }
+                    set_closed_borders = {
+                        who = event_target:fatherland_empire
+                        status = no
+                        forced = 50
+                    }
+                    set_subject_of = {
+                        who = event_target:fatherland_empire
+                        subject_type = frontier_world
+                    }
+                }
+            }
+            event_target:frontier_event_planet = {
+                solar_system = {
+                    create_starbase = {
+                        size = starbase_starport
+                        module = shipyard
+                        building = crew_quarters
+                        owner = event_target:frontier_world_country
+                        effect = {
+                            set_starbase_module = {
+                                slot = 1
+                                module = hangar_bay
+                            }
+                        }
+                    }
+                }
+                set_owner = event_target:frontier_world_country
+                set_capital = yes
+                create_pop = {
+                    species = fatherland_species
+                }
+                add_district = district_farming
+                add_district = district_mining
+                add_district = district_generator
+                add_modifier = {
+                    modifier = frontier_colonial_world
+                    days = -1
+                }
+                remove_planet_flag = frontier_target
+                remove_modifier = frontier_target
+                clear_global_event_target = frontier_event_planet
+                clear_global_event_target = frontier_world_country
+                solar_system = {
+                    every_system_planet = {
+                        surveyed = {
+                            set_surveyed = yes
+                            surveyor = root.owner
+                        }
+                    }
+                }
+            }
+        }
+        event_target:global_event_country = {
+            change_variable = {
+                which = fatherland_currentglobal_fw
+                value = 1
+            }
+        }
+        root = {
+            clear_global_event_target = fatherland_empire
+            set_variable = {
+                which = fatherland_currentglobal_fw
+                value = event_target:global_event_country
+            }
+            if = {
+                limit = {
+                    is_ai = yes
+                }
+                set_variable = {
+                    which = fatherland_aicurrent_fw
+                    value = 1
+                }
+            }
+            if = {
+                limit = {
+                    is_ai = no
+                }
+                set_variable = {
+                    which = fatherland_playercurrent_fw
+                    value = 1
+                }
+            }
+        }
+        event_target:fatherland_frontier_edgesystem = {
+            clear_event_target = fatherland_frontier_edgesystem
+        }
+        every_country = {
+            country_event = {
+                id = fatherland_frontier.101
+                days = 2
+            }
+        }
+    }
+    option = {
+        name = fatherland_frontier.100.b
+        trigger = {
+            NOT = {
+                any_planet = {
+                    has_planet_flag = frontier_target
+                }
+            }
+        }
+        custom_tooltip = "fatherland_frontier.100.b.tooltip"
+    }
+}
+planet_event = {
+    id = fatherland_frontier.101
+    title = "fatherland_frontier.101_name"
+    desc = "fatherland_frontier.101_desc"
+    picture = GFX_evt_wormhole
+    is_triggered_only = yes
+    hide_window = yes
+    immediate = {
+        change_variable = {
+            which = fatherland_playercurrent_fw
+            value = 1
+        }
+        change_variable = {
+            which = fatherland_currentglobal_fw
+            value = 1
+        }
+    }
+}
+country_event = {
+    id = fatherland_frontier.999
+    title = "fatherland_frontier.999_name"
+    desc = "fatherland_frontier.999_desc"
+    picture = GFX_evt_wormhole
+    is_triggered_only = yes
+    hide_window = yes
+    trigger = {
+        from = {
+            has_origin = origin_frontier_world
+        }
+        NOT = {
+            has_global_flag = fatherland_limittomax_fw
+        }
+    }
+    immediate = {
+        event_target:global_event_country = {
+            change_variable = {
+                which = fatherland_currentglobal_fw
+                value = -1
+            }
+        }
+        every_country = {
+            country_event = {
+                id = fatherland_frontier.101
+            }
+        }
+    }
+}

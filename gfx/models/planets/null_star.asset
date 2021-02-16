@@ -1,0 +1,73 @@
+entity = {
+    name = "null_star_entity"
+    pdxmesh = "black_hole_new_mesh"
+    scale = 1.5
+    default_state = "idle"
+    state = {
+        name = "idle"
+        state_time = 5
+        event = {
+            time = 0
+            particle = "black_hole_particle"
+            trigger_once = yes
+            keep_particle = yes
+        }
+        event = {
+            trigger_once = yes
+            sound = {
+                soundeffect = "blackhole_hum_idle"
+            }
+        }
+    }
+    locator = {
+        name = "planet"
+    }
+    game_data = {
+        size = 1.0
+        bloom_factor = 1
+    }
+}
+entity = {
+    name = "null_star_rings_entity"
+    pdxmesh = "black_hole_rings_mesh"
+    default_state = "idle"
+    state = {
+        name = "idle"
+        state_time = 5
+    }
+    scale = 2.0
+    game_data = {
+        uv_animation_speed = -0.050
+        uv_animation_direction = {
+            0.4
+            0.4
+        }
+    }
+}
+entity = {
+    name = "null_star_grav_lens_entity"
+    pdxmesh = "black_hole_grav_lens_mesh"
+    default_state = "idle"
+    state = {
+        name = "idle"
+        state_time = 5
+    }
+    scale = 2.0
+}
+entity = {
+    name = "null_star_grav_animation_entity"
+    pdxmesh = "black_hole_grav_animation_mesh"
+    default_state = "idle"
+    state = {
+        name = "idle"
+        state_time = 5
+    }
+    scale = 2.0
+    game_data = {
+        uv_animation_speed = 0.2
+        uv_animation_direction = {
+            0.0
+            0.4
+        }
+    }
+}

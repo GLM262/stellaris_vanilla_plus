@@ -1,0 +1,35 @@
+leader_trait_necromancer = {
+    cost = 0
+    modification = no
+    icon = "gfx/hand.dds"
+    custom_tooltip = necromancer_key_1
+    initial = no
+    leader_trait = {
+        general
+    }
+    leader_class = {
+        general
+    }
+    opposites = {
+        "leader_trait_resilient"
+    }
+    immortal_leaders = yes
+    randomized = no
+}
+leader_trait_monkeys_paw = {
+    cost = 0
+    modification = no
+    icon = "gfx/monkeys_paw.dds"
+    modifier = {
+        army_morale_damage_mult = 0.15
+        army_collateral_damage_mult = 0.33
+    }
+    leader_trait = {
+        general
+    }
+    leader_class = {
+        general
+    }
+    initial = no
+    randomized = no
+}

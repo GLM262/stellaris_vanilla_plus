@@ -1,0 +1,303 @@
+namespace = necromancy
+country_event = {
+    id = necromancy.10
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        from = {
+            exists = leader
+            leader = {
+                has_trait = leader_trait_necromancer
+            }
+        }
+        FromFrom = {
+            has_ground_combat = no
+            has_army = yes
+        }
+    }
+    immediate = {
+        log = "Potential necromancy event detected..."
+        from = {
+            leader = {
+                set_timed_leader_flag = {
+                    flag = can_die
+                    days = 360
+                }
+            }
+        }
+        FromFrom = {
+            log = "counting defending armies on [This.GetName]"
+            set_variable = {
+                which = defenders_necro
+                value = 0
+            }
+            every_planet_army = {
+                prev = {
+                    change_variable = {
+                        which = defenders_necro
+                        value = 1
+                    }
+                }
+            }
+            log = "Planet [This.GetName] has been counted. It has [This.defenders_necro] defending armies."
+        }
+    }
+}
+country_event = {
+    id = necromancy.11
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_valid_civic = civic_reanimated_armies
+        from = {
+            exists = leader
+            leader = {
+                leader_class = general
+            }
+        }
+    }
+    immediate = {
+        log = "Flagging [From.Leader.GetName] for potential death..."
+        from = {
+            leader = {
+                set_timed_leader_flag = {
+                    flag = can_die
+                    days = 360
+                }
+                log = "[This.GetName] has been flagged"
+            }
+        }
+    }
+}
+country_event = {
+    id = necromancy.20
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        FromFrom = {
+            has_ground_combat = no
+            has_army = yes
+            any_planet_army = {
+                exists = leader
+                leader = {
+                    has_trait = leader_trait_necromancer
+                }
+            }
+        }
+    }
+    immediate = {
+        FromFrom = {
+            every_planet_army = {
+                limit = {
+                    leader = {
+                        not = {
+                            has_leader_flag = can_die
+                        }
+                    }
+                }
+                leader = {
+                    set_timed_leader_flag = {
+                        flag = can_die
+                        days = 360
+                    }
+                }
+            }
+        }
+        FromFrom = {
+            log = "Counting hostile armies approaching planet [This.GetName]."
+            set_variable = {
+                which = attackers_necro
+                value = 0
+            }
+        }
+        From = {
+            every_owned_ship = {
+                Prev.FromFrom = {
+                    change_variable = {
+                        which = attackers_necro
+                        value = 1
+                    }
+                }
+            }
+        }
+        FromFrom = {
+            log = "Planet [This.GetName] has [This.attackers_necro] hostile armies."
+        }
+    }
+}
+country_event = {
+    id = necromancy.21
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        FromFrom = {
+            exists = owner
+            owner = {
+                has_valid_civic = civic_reanimated_armies
+            }
+            any_planet_army = {
+                exists = leader
+            }
+        }
+    }
+    immediate = {
+        log = "Flagging defending leader for potential death..."
+        FromFrom = {
+            every_planet_army = {
+                limit = {
+                    leader = {
+                        not = {
+                            has_leader_flag = can_die
+                        }
+                    }
+                }
+                leader = {
+                    set_timed_leader_flag = {
+                        flag = can_die
+                        days = 360
+                    }
+                }
+            }
+            log = "Defending leader has been flagged on [This.GetName]."
+        }
+    }
+}
+country_event = {
+    id = necromancy.30
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_valid_civic = civic_reanimated_armies
+    }
+    immediate = {
+        FromFrom = {
+            while = {
+                count = defenders_necro
+                create_army = {
+                    name = "Undead army"
+                    owner = root
+                    species = root.species
+                    type = "undead_army"
+                }
+            }
+            set_variable = {
+                which = defenders_necro
+                value = 0
+            }
+            log = "Defending armies have been reanimated. Enjoy your goodies from [This.GetName]"
+        }
+    }
+}
+country_event = {
+    id = necromancy.40
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        FromFrom = {
+            while = {
+                count = attackers_necro
+                create_army = {
+                    name = "Undead army"
+                    owner = root
+                    species = root.species
+                    type = "undead_army"
+                }
+            }
+            set_variable = {
+                which = attackers_necro
+                value = 0
+            }
+            log = "Attacking armies have been reanimated. Enjoy your goodies from [This.GetName]"
+        }
+    }
+}
+country_event = {
+    id = necromancy.50
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_valid_civic = civic_reanimated_armies
+        from = {
+            leader_class = general
+            has_leader_flag = can_die
+        }
+    }
+    immediate = {
+        country_event = {
+            id = necromancy.52
+            days = 100
+        }
+    }
+}
+country_event = {
+    id = necromancy.51
+    title = monkeys.paw.name
+    desc = monkeys.paw.desc
+    picture = GFX_evt_conclave
+    show_sound = event_conversation
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        has_valid_civic = civic_reanimated_armies
+        from = {
+            leader_class = general
+            has_leader_flag = can_die
+        }
+    }
+    option = {
+        name = monkeys.paw.a
+    }
+    option = {
+        name = monkeys.paw.b
+    }
+}
+country_event = {
+    id = necromancy.52
+    title = monkeys.paw2.name
+    desc = monkeys.paw2.desc
+    picture = GFX_evt_necrophage
+    show_sound = event_mystic_reveal
+    is_triggered_only = yes
+    option = {
+        name = monkeys.paw.c
+    }
+    immediate = {
+        log = "Running necromancy.52"
+        create_leader = {
+            event_leader = no
+            class = general
+            species = owner_species
+            name = random
+            skill = 1
+            traits = {
+                trait = leader_trait_necromancer
+                trait = leader_trait_monkeys_paw
+            }
+        }
+    }
+}
+country_event = {
+    id = necromancy.60
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        is_ai = yes
+        has_valid_civic = civic_reanimated_armies
+    }
+    immediate = {
+        while = {
+            count = 5
+            create_leader = {
+                event_leader = no
+                class = general
+                species = owner_species
+                name = random
+                skill = 1
+                traits = {
+                    trait = leader_trait_necromancer
+                    trait = leader_trait_monkeys_paw
+                }
+            }
+        }
+    }
+}

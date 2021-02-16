@@ -1,0 +1,48 @@
+colonial_policy = {
+    potential = {
+        is_country_type = default
+        has_global_flag = fatherland_active
+    }
+    option = {
+        name = "iron_curtain"
+        valid = {
+        }
+        policy_flags = {
+            iron_curtain
+        }
+        modifier = {
+            pop_growth_from_immigration = -0.1
+        }
+    }
+    option = {
+        name = "minimal_colonial_control"
+        potential = {
+            NOT = {
+                has_ethic = "ethic_gestalt_consciousness"
+            }
+        }
+        policy_flags = {
+            minimal_colonial_control
+        }
+        valid = {
+        }
+        AI_weight = {
+            factor = 10
+        }
+    }
+    option = {
+        name = "promote_settlers"
+        policy_flags = {
+            promote_settlers
+        }
+        valid = {
+            NOR = {
+                has_valid_civic = civic_police_state
+                has_ethic = ethic_fanatic_authoritarian
+            }
+        }
+        AI_weight = {
+            factor = 0
+        }
+    }
+}

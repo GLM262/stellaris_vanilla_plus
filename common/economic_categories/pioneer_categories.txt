@@ -1,0 +1,3 @@
+planet_districts_pioneer_manufactory = {
+    parent = planet_districts
+}

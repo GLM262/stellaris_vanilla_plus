@@ -1,0 +1,104 @@
+tech_pk_nullifier = {
+    area = engineering
+    cost = @tier5cost3
+    tier = 5
+    is_dangerous = yes
+    is_reverse_engineerable = no
+    category = {
+        voidcraft
+    }
+    weight = @tier5weight3
+    potential = {
+        host_has_dlc = "Apocalypse"
+        is_pacifist = no
+        has_origin = origin_absolute_zero
+    }
+    weight_modifier = {
+        factor = 0
+    }
+    ai_weight = {
+        factor = 0
+    }
+}
+tech_repurposed_field_generator = {
+    area = engineering
+    cost = @tier2cost3
+    tier = 2
+    category = {
+        voidcraft
+    }
+    weight = @tier2weight3
+    is_rare = yes
+    prereqfor_desc = {
+        ship = {
+            title = "tech_repurposed_field_generator_desc"
+            desc = "tech_repurposed_field_generator_name"
+        }
+    }
+    potential = {
+        has_origin = origin_absolute_zero
+    }
+    weight_modifier = {
+        factor = 0
+    }
+    ai_weight = {
+        factor = 0
+    }
+}
+tech_mine_null = {
+    cost = @tier3cost3
+    area = physics
+    tier = 3
+    category = {
+        field_manipulation
+    }
+    weight = @tier3weight3
+    potential = {
+        has_origin = origin_absolute_zero
+    }
+    weight_modifier = {
+        factor = 0
+    }
+    ai_weight = {
+        factor = 0
+    }
+}
+tech_global_super_cooler = {
+    area = society
+    cost = @tier2cost3
+    tier = 2
+    category = {
+        statecraft
+    }
+    weight = @tier2weight3
+    is_rare = yes
+    potential = {
+        has_origin = origin_absolute_zero
+    }
+    weight_modifier = {
+        factor = 0
+    }
+    ai_weight = {
+        factor = 0
+    }
+}
+tech_null_armor = {
+    area = engineering
+    cost = @tier3cost3
+    tier = 3
+    is_reverse_engineerable = no
+    category = {
+        voidcraft
+    }
+    weight = @tier3weight3
+    is_rare = yes
+    potential = {
+        has_origin = origin_absolute_zero
+    }
+    weight_modifier = {
+        factor = 0
+    }
+    ai_weight = {
+        factor = 0
+    }
+}

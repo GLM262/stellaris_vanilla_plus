@@ -1,0 +1,60 @@
+bts_heard_a_rumor_gc = {
+    opinion = {
+        base = -1.5
+    }
+    accumulative = yes
+    max = 0
+    min = -1000
+    decay = {
+        base = 1
+    }
+}
+bts_heard_a_rumor_fed = {
+    opinion = {
+        base = -2
+    }
+    accumulative = yes
+    max = 0
+    min = -1000
+    decay = {
+        base = 1
+    }
+}
+bts_heard_a_rumor = {
+    opinion = {
+        base = -4
+    }
+    accumulative = yes
+    max = 0
+    min = -1000
+    decay = {
+        base = 3
+    }
+}
+bts_entered_war_foe = {
+    opinion = {
+        base = -50
+    }
+    accumulative = yes
+    decay = {
+        base = 1
+    }
+}
+bts_entered_war_friend = {
+    opinion = {
+        base = 50
+    }
+    accumulative = yes
+    decay = {
+        base = 1
+    }
+}
+bts_entered_war_gc = {
+    opinion = {
+        base = -20
+    }
+    accumulative = yes
+    decay = {
+        base = 1
+    }
+}

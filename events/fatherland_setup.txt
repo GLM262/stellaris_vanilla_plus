@@ -1,0 +1,2498 @@
+namespace = fatherland_setup
+country_event = {
+    id = fatherland_setup.98
+    title = "fatherland_setup.98_name"
+    desc = "fatherland_setup.98_desc"
+    picture = GFX_evt_ship_in_orbit
+    is_triggered_only = yes
+    hide_window = yes
+    trigger = {
+    }
+    immediate = {
+        set_global_flag = fatherland_dev_active
+    }
+}
+country_event = {
+    id = fatherland_setup.99
+    title = "fatherland_setup.99_name"
+    desc = "fatherland_setup.99_desc"
+    picture = GFX_evt_ship_in_orbit
+    is_triggered_only = yes
+    hide_window = no
+    trigger = {
+    }
+    immediate = {
+    }
+    option = {
+        name = fatherland_setup.99.a
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.100
+            }
+        }
+    }
+}
+country_event = {
+    id = fatherland_setup.100
+    title = "fatherland_setup.100_name"
+    desc = "fatherland_setup.100_desc"
+    picture = GFX_evt_ship_in_orbit
+    is_triggered_only = yes
+    trigger = {
+        is_ai = no
+        is_multiplayer = no
+    }
+    immediate = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_flag = fatherland_defaults_enabled
+                }
+            }
+            set_global_flag = fatherland_defaults_enabled
+            set_global_flag = fatherland_hegira_poploss_on
+            set_global_flag = fatherland_hegiran_dangerousworlds_on
+            set_global_flag = fatherland_hegira_bonusresources
+            set_global_flag = fatherland_hegira_rogues_on
+            set_global_flag = fatherland_roguerogues_on
+            set_global_flag = fatherland_rogue_poplimit
+            set_global_flag = fatherland_rogue_timelimit_on
+            set_global_flag = fatherland_bonusresources
+            set_global_flag = fatherland_dangerousworlds_on
+            set_global_flag = fatherland_poploss_on
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_modifier = fatherland_recent_census
+                }
+            }
+            every_country = {
+                country_event = {
+                    id = fatherland_rogue.997
+                    days = 2
+                }
+                country_event = {
+                    id = fatherland_hegira.997
+                    days = 4
+                }
+                country_event = {
+                    id = fatherland_normalempires.101
+                    days = 6
+                }
+            }
+            add_modifier = {
+                modifier = fatherland_recent_census
+                days = 7
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.100.info
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.99
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.100.basicsettings_header
+        custom_tooltip = "fatherland_setup.100.basicsettings.tooltip"
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.100
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.100.custom
+        custom_tooltip = "fatherland_setup.100.custom.tooltip"
+        country_event = {
+            id = fatherland_setup.101
+        }
+    }
+    option = {
+        name = fatherland_setup.101.activate_playas_off
+        custom_tooltip = "fatherland_setup.101.playas.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_playas
+            }
+        }
+        set_global_flag = fatherland_playas
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.100
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.100.human
+        custom_tooltip = "fatherland_setup.100.human.tooltip"
+        trigger = {
+            NOT = {
+                has_country_flag = human_1
+            }
+        }
+        set_country_flag = human_1
+        country_event = {
+            id = fatherland_setup.100
+        }
+    }
+    option = {
+        name = fatherland_setup.100.human_yes
+        trigger = {
+            has_country_flag = human_1
+        }
+        custom_tooltip = "fatherland_setup.100.human.tooltip"
+        remove_country_flag = human_1
+        country_event = {
+            id = fatherland_setup.100
+        }
+    }
+    option = {
+        name = fatherland_setup.101.activate_playas_on
+        custom_tooltip = "fatherland_setup.101.playas.tooltip"
+        trigger = {
+            has_global_flag = fatherland_playas
+        }
+        remove_global_flag = fatherland_playas
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.100
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.hegiran_hegemony_off
+        custom_tooltip = "fatherland_setup.104.hegiran_hegemony.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_hegiran_hegemony
+            }
+            any_country = {
+                has_origin = origin_doomsday
+            }
+        }
+        set_global_flag = fatherland_hegiran_hegemony
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.100
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.hegiran_hegemony_on
+        custom_tooltip = "fatherland_setup.104.hegiran_hegemony.tooltip"
+        trigger = {
+            has_global_flag = fatherland_hegiran_hegemony
+            any_country = {
+                has_origin = origin_doomsday
+            }
+        }
+        remove_global_flag = fatherland_hegiran_hegemony
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.100
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.100.preset_header
+        custom_tooltip = "fatherland_setup.100.preset_header.tooltip"
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.100
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.100.hegira
+        custom_tooltip = "fatherland_setup.100.hegira.tooltip"
+        trigger = {
+            any_country = {
+                has_origin = origin_doomsday
+            }
+        }
+        set_global_flag = fatherland_active
+        set_global_flag = fatherland_hegirans_active
+        set_global_flag = fatherland_faster_hegira
+        set_global_flag = fatherland_rogues_active
+        set_global_flag = fatherland_veryfast_rogues
+        event_target:global_event_country = {
+            change_variable = {
+                which = fatherland_globalmax_hegirans
+                value = 10
+            }
+            change_variable = {
+                which = fatherland_aimax_hegirans
+                value = 30
+            }
+            change_variable = {
+                which = fatherland_playermax_hegirans
+                value = 30
+            }
+            change_variable = {
+                which = fatherland_globalmax_rogues
+                value = 30
+            }
+            change_variable = {
+                which = fatherland_aimax_rogues
+                value = 30
+            }
+            change_variable = {
+                which = fatherland_playermax_rogues
+                value = 30
+            }
+        }
+        root = {
+            set_variable = {
+                which = fatherland_globalmax_hegirans
+                value = event_target:global_event_country
+            }
+            set_variable = {
+                which = fatherland_aimax_hegirans
+                value = event_target:global_event_country
+            }
+            set_variable = {
+                which = fatherland_playermax_hegirans
+                value = event_target:global_event_country
+            }
+            set_variable = {
+                which = fatherland_globalmax_rogues
+                value = event_target:global_event_country
+            }
+            set_variable = {
+                which = fatherland_aimax_rogues
+                value = event_target:global_event_country
+            }
+            set_variable = {
+                which = fatherland_playermax_rogues
+                value = event_target:global_event_country
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.100.barren_freeforall
+        custom_tooltip = "fatherland_setup.100.barren_freeforall.tooltip"
+        set_global_flag = fatherland_active
+        set_global_flag = fatherland_rogues_active
+        set_global_flag = fatherland_veryfast_rogues
+        set_global_flag = fatherland_poploss_on
+        set_global_flag = fatherland_dangerousworlds_on
+        set_global_flag = fatherland_bonusresources
+        set_global_flag = fatherland_roguerogues_on
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_globalmax_rogues
+                    value = 35
+                }
+                change_variable = {
+                    which = fatherland_aimax_rogues
+                    value = 35
+                }
+                change_variable = {
+                    which = fatherland_playermax_rogues
+                    value = 35
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_globalmax_rogues
+                    value = event_target:global_event_country
+                }
+                set_variable = {
+                    which = fatherland_globalmax_fw
+                    value = event_target:global_event_country
+                }
+                set_variable = {
+                    which = fatherland_aimax_rogues
+                    value = event_target:global_event_country
+                }
+                set_variable = {
+                    which = fatherland_playermax_rogues
+                    value = event_target:global_event_country
+                }
+                set_variable = {
+                    which = fatherland_playermax_fw
+                    value = event_target:global_event_country
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.100.disableall
+        custom_tooltip = "fatherland_setup.100.disableall.tooltip"
+    }
+}
+country_event = {
+    id = fatherland_setup.101
+    title = "fatherland_setup.101_name"
+    desc = "fatherland_setup.101_desc"
+    picture = GFX_evt_star_chart
+    is_triggered_only = yes
+    trigger = {
+    }
+    immediate = {
+        set_variable = {
+            which = fatherland_globalmax_rogues
+            value = event_target:global_event_country
+        }
+        set_variable = {
+            which = fatherland_currentglobal_rogues
+            value = event_target:global_event_country
+        }
+        set_variable = {
+            which = fatherland_globalmax_fw
+            value = event_target:global_event_country
+        }
+        set_variable = {
+            which = fatherland_currentglobal_fw
+            value = event_target:global_event_country
+        }
+        set_variable = {
+            which = fatherland_globalmax_hegirans
+            value = event_target:global_event_country
+        }
+        set_variable = {
+            which = fatherland_currentglobal_hegirans
+            value = event_target:global_event_country
+        }
+        set_variable = {
+            which = fatherland_currentglobal_normalempires
+            value = event_target:global_event_country
+        }
+    }
+    option = {
+        name = fatherland_setup.101.activatefatherland
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_active
+            }
+        }
+        set_global_flag = fatherland_active
+        country_event = {
+            id = fatherland_setup.101
+        }
+        custom_tooltip = "fatherland_setup.101.activatefatherland.tooltip"
+    }
+    option = {
+        name = fatherland_setup.101.coresetting_header
+        trigger = {
+            has_global_flag = fatherland_active
+        }
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.101
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.101.activate_frontierworlds
+        trigger = {
+            has_global_flag = fatherland_active
+            has_global_flag = fatherland_dev_active
+            NOT = {
+                has_global_flag = fatherland_frontiers_active
+            }
+        }
+        set_global_flag = fatherland_frontiers_active
+        country_event = {
+            id = fatherland_setup.101
+        }
+    }
+    option = {
+        name = fatherland_setup.101.frontierworldoptions
+        trigger = {
+            has_global_flag = fatherland_active
+            has_global_flag = fatherland_dev_active
+            has_global_flag = fatherland_frontiers_active
+        }
+        country_event = {
+            id = fatherland_setup.102
+        }
+    }
+    option = {
+        name = fatherland_setup.101.activate_roguecolonies
+        trigger = {
+            has_global_flag = fatherland_active
+            NOT = {
+                has_global_flag = fatherland_rogues_active
+            }
+        }
+        set_global_flag = fatherland_rogues_active
+        country_event = {
+            id = fatherland_setup.101
+        }
+    }
+    option = {
+        name = fatherland_setup.101.roguecolonyoptions
+        trigger = {
+            has_global_flag = fatherland_active
+            has_global_flag = fatherland_rogues_active
+        }
+        country_event = {
+            id = fatherland_setup.104
+        }
+    }
+    option = {
+        name = fatherland_setup.101.activate_hegira
+        trigger = {
+            has_global_flag = fatherland_active
+            NOT = {
+                has_global_flag = fatherland_hegirans_active
+            }
+        }
+        set_global_flag = fatherland_hegirans_active
+        country_event = {
+            id = fatherland_setup.101
+        }
+    }
+    option = {
+        name = fatherland_setup.101.hegiranoptions
+        trigger = {
+            has_global_flag = fatherland_active
+            has_global_flag = fatherland_hegirans_active
+        }
+        country_event = {
+            id = fatherland_setup.106
+        }
+    }
+    option = {
+        name = fatherland_setup.101.miscsettings_header
+        trigger = {
+            has_global_flag = fatherland_active
+        }
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.101
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.101.censusevent
+        custom_tooltip = "fatherland_setup.101.censusevent.tooltip"
+        trigger = {
+            has_global_flag = fatherland_active
+            NOT = {
+                has_modifier = fatherland_recent_census
+            }
+        }
+        hidden_effect = {
+            every_country = {
+                country_event = {
+                    id = fatherland_rogue.997
+                    days = 2
+                }
+                country_event = {
+                    id = fatherland_hegira.997
+                    days = 2
+                }
+                country_event = {
+                    id = fatherland_normalempires.101
+                    days = 2
+                }
+            }
+            add_modifier = {
+                modifier = fatherland_recent_census
+                days = 7
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.101.activate_playas_off
+        custom_tooltip = "fatherland_setup.101.playas.tooltip"
+        trigger = {
+            has_global_flag = fatherland_active
+            NOT = {
+                has_global_flag = fatherland_playas
+            }
+        }
+        set_global_flag = fatherland_playas
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.101
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.101.activate_playas_on
+        custom_tooltip = "fatherland_setup.101.playas.tooltip"
+        trigger = {
+            has_global_flag = fatherland_active
+            has_global_flag = fatherland_playas
+        }
+        remove_global_flag = fatherland_playas
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.101
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.101.deactivatefatherland
+        trigger = {
+            has_global_flag = fatherland_active
+        }
+        remove_global_flag = fatherland_active
+        remove_global_flag = fatherland_frontiers_active
+        remove_global_flag = fatherland_rogues_active
+        remove_global_flag = fatherland_hegirans_active
+        country_event = {
+            id = fatherland_setup.101
+        }
+        custom_tooltip = "fatherland_setup.100.disableall.tooltip"
+    }
+    option = {
+        name = fatherland_setup.101.exit
+    }
+}
+country_event = {
+    id = fatherland_setup.102
+    title = "fatherland_setup.102_name"
+    desc = "fatherland_setup.102_desc"
+    picture = GFX_evt_gaia
+    is_triggered_only = yes
+    trigger = {
+    }
+    immediate = {
+    }
+    option = {
+        name = fatherland_setup.102.generalsettings_header
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.maxfrontiers
+        custom_tooltip = "fatherland_setup.102.maxfrontiers.tooltip"
+        change_variable = {
+            which = fatherland_globalmax_fw
+            value = 0
+        }
+        change_variable = {
+            which = fatherland_playermax_fw
+            value = 0
+        }
+        change_variable = {
+            which = fatherland_aimax_fw
+            value = 0
+        }
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.103
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.limittomax_off
+        custom_tooltip = "fatherland_setup.102.limittomax.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_limittomax_fw
+            }
+        }
+        set_global_flag = fatherland_limittomax_fw
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.limittomax_on
+        custom_tooltip = "fatherland_setup.102.limittomax.tooltip"
+        trigger = {
+            has_global_flag = fatherland_limittomax_fw
+        }
+        remove_global_flag = fatherland_limittomax_fw
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.poploss_on
+        custom_tooltip = "fatherland_setup.102.poploss.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_poploss_on
+            }
+        }
+        set_global_flag = fatherland_poploss_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.poploss_off
+        custom_tooltip = "fatherland_setup.102.poploss.tooltip"
+        trigger = {
+            has_global_flag = fatherland_poploss_on
+        }
+        remove_global_flag = fatherland_poploss_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.dangerousworlds_off
+        custom_tooltip = "fatherland_setup.102.dangerousworlds.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_dangerousworlds_on
+            }
+        }
+        set_global_flag = fatherland_dangerousworlds_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.dangerousworlds_on
+        custom_tooltip = "fatherland_setup.102.dangerousworlds.tooltip"
+        trigger = {
+            has_global_flag = fatherland_dangerousworlds_on
+        }
+        remove_global_flag = fatherland_dangerousworlds_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.autprotec_off
+        custom_tooltip = "fatherland_setup.102.autprotec.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_autoprotec_on
+            }
+        }
+        set_global_flag = fatherland_autoprotec_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.autprotec_on
+        custom_tooltip = "fatherland_setup.102.autprotec.tooltip"
+        trigger = {
+            has_global_flag = fatherland_autoprotec_on
+        }
+        remove_global_flag = fatherland_autoprotec_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.aisettings_header
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.fliptoempire_off
+        custom_tooltip = "fatherland_setup.102.fliptoempire.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_fliptoempire_on
+            }
+        }
+        set_global_flag = fatherland_fliptoempire_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.fliptoempire_on
+        custom_tooltip = "fatherland_setup.102.fliptoempire.tooltip"
+        trigger = {
+            has_global_flag = fatherland_fliptoempire_on
+        }
+        remove_global_flag = fatherland_fliptoempire_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.fliptoempire_ownfrontiers_off
+        custom_tooltip = "fatherland_setup.102.fliptoempire_ownfrontiers.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_flippedempire_frontiers_on
+            }
+            has_global_flag = fatherland_fliptoempire_on
+        }
+        set_global_flag = fatherland_flippedempire_frontiers_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.fliptoempire_ownfrontiers_on
+        custom_tooltip = "fatherland_setup.102.fliptoempire_ownfrontiers.tooltip"
+        trigger = {
+            has_global_flag = fatherland_flippedempire_frontiers_on
+            has_global_flag = fatherland_fliptoempire_on
+        }
+        remove_global_flag = fatherland_flippedempire_frontiers_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.aifrontier_off
+        custom_tooltip = "fatherland_setup.102.aifrontier.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_aifrontier_on
+            }
+        }
+        set_global_flag = fatherland_aifrontier_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.aifrontier_on
+        custom_tooltip = "fatherland_setup.102.aifrontier.tooltip"
+        trigger = {
+            has_global_flag = fatherland_aifrontier_on
+        }
+        remove_global_flag = fatherland_aifrontier_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.roguecolonyfrontier_off
+        custom_tooltip = "fatherland_setup.102.roguecolonyfrontier.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_rogueaifrontier_on
+            }
+            has_global_flag = fatherland_frontiers_active
+        }
+        set_global_flag = fatherland_rogueaifrontier_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.roguecolonyfrontier_on
+        custom_tooltip = "fatherland_setup.102.roguecolonyfrontier.tooltip"
+        trigger = {
+            has_global_flag = fatherland_rogueaifrontier_on
+            has_global_flag = fatherland_frontiers_active
+        }
+        remove_global_flag = fatherland_rogueaifrontier_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.hegirafrontier_off
+        custom_tooltip = "fatherland_setup.102.hegirafrontier.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_hegiraaifrontier_on
+            }
+            has_global_flag = fatherland_frontiers_active
+        }
+        set_global_flag = fatherland_hegiraaifrontier_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.hegirafrontier_on
+        custom_tooltip = "fatherland_setup.102.hegirafrontier.tooltip"
+        trigger = {
+            has_global_flag = fatherland_hegiraaifrontier_on
+            has_global_flag = fatherland_frontiers_active
+        }
+        remove_global_flag = fatherland_hegiraaifrontier_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.102.returnmain
+        country_event = {
+            id = fatherland_setup.101
+        }
+    }
+}
+country_event = {
+    id = fatherland_setup.103
+    title = "fatherland_setup.103_name"
+    desc = "fatherland_setup.103_desc"
+    picture = GFX_evt_atmospheric_flight
+    is_triggered_only = yes
+    trigger = {
+    }
+    immediate = {
+    }
+    option = {
+        name = fatherland_setup.103.globalmax
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.103
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.103.plusone
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_globalmax_fw
+                    value = 1
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_globalmax_fw
+                    value = prev
+                }
+                country_event = {
+                    id = fatherland_setup.103
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.103.plusfive
+        change_variable = {
+            which = fatherland_globalmax_fw
+            value = 5
+        }
+        event_target:global_event_country = {
+            change_variable = {
+                which = fatherland_globalmax_fw
+                value = 5
+            }
+        }
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.103
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.103.minusone
+        change_variable = {
+            which = fatherland_globalmax_fw
+            value = -1
+        }
+        event_target:global_event_country = {
+            change_variable = {
+                which = fatherland_globalmax_fw
+                value = -1
+            }
+        }
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.103
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.103.minusfive
+        change_variable = {
+            which = fatherland_globalmax_fw
+            value = -5
+        }
+        event_target:global_event_country = {
+            change_variable = {
+                which = fatherland_globalmax_fw
+                value = -5
+            }
+        }
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.103
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.103.playermax
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.103
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.103.plusone
+        change_variable = {
+            which = fatherland_playermax_fw
+            value = 1
+        }
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.103
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.103.plusfive
+        change_variable = {
+            which = fatherland_playermax_fw
+            value = 5
+        }
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.103
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.103.minusone
+        change_variable = {
+            which = fatherland_playermax_fw
+            value = -1
+        }
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.103
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.103.minusfive
+        change_variable = {
+            which = fatherland_playermax_fw
+            value = -5
+        }
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.103
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.103.aimax
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.103
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.103.plusone
+        change_variable = {
+            which = fatherland_aimax_fw
+            value = 1
+        }
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.103
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.103.plusfive
+        change_variable = {
+            which = fatherland_aimax_fw
+            value = 5
+        }
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.103
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.103.minusone
+        change_variable = {
+            which = fatherland_aimax_fw
+            value = -1
+        }
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.103
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.103.minusfive
+        change_variable = {
+            which = fatherland_aimax_fw
+            value = -5
+        }
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.103
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.103.return
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.102
+            }
+        }
+    }
+}
+country_event = {
+    id = fatherland_setup.104
+    title = "fatherland_setup.104_name"
+    desc = "fatherland_setup.104_desc"
+    picture = GFX_evt_fatherland_rogues
+    is_triggered_only = yes
+    trigger = {
+    }
+    immediate = {
+    }
+    option = {
+        name = fatherland_setup.104.generalsettings_header
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.maxrogues
+        custom_tooltip = "fatherland_setup.102.maxrogues.tooltip"
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.105
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.roguespeed
+        if = {
+            limit = {
+                has_global_flag = fatherland_standard_rogues
+            }
+            custom_tooltip = "fatherland_setup.104.roguespeed.tooltip"
+        }
+        if = {
+            limit = {
+                has_global_flag = fatherland_fast_rogues
+            }
+            custom_tooltip = "fatherland_setup.104.roguespeed.fast.tooltip"
+        }
+        if = {
+            limit = {
+                has_global_flag = fatherland_faster_rogues
+            }
+            custom_tooltip = "fatherland_setup.104.roguespeed.faster.tooltip"
+        }
+        if = {
+            limit = {
+                has_global_flag = fatherland_veryfast_rogues
+            }
+            custom_tooltip = "fatherland_setup.104.roguespeed.veryfast.tooltip"
+        }
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.109
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.limittomax_off
+        custom_tooltip = "fatherland_setup.104.limittomax.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_limittomax_rogues
+            }
+        }
+        set_global_flag = fatherland_limittomax_rogues
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.limittomax_on
+        custom_tooltip = "fatherland_setup.104.limittomax.tooltip"
+        trigger = {
+            has_global_flag = fatherland_limittomax_rogues
+        }
+        remove_global_flag = fatherland_limittomax_rogues
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.roguetimelimit_off
+        custom_tooltip = "fatherland_setup.104.roguetimelimit.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_rogue_timelimit_on
+            }
+        }
+        set_global_flag = fatherland_rogue_timelimit_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.roguetimelimit_on
+        custom_tooltip = "fatherland_setup.104.roguetimelimit.tooltip"
+        trigger = {
+            has_global_flag = fatherland_rogue_timelimit_on
+        }
+        remove_global_flag = fatherland_rogue_timelimit_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.poploss_off
+        custom_tooltip = "fatherland_setup.104.poploss.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_poploss_on
+            }
+        }
+        set_global_flag = fatherland_poploss_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.poploss_on
+        custom_tooltip = "fatherland_setup.104.poploss.tooltip"
+        trigger = {
+            has_global_flag = fatherland_poploss_on
+        }
+        remove_global_flag = fatherland_poploss_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.roguepoplimit_off
+        custom_tooltip = "fatherland_setup.104.roguepoplimit.tooltip"
+        trigger = {
+            has_global_flag = fatherland_poploss_on
+            NOT = {
+                has_global_flag = fatherland_rogue_poplimit
+            }
+        }
+        set_global_flag = fatherland_rogue_poplimit
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.roguepoplimit_on
+        custom_tooltip = "fatherland_setup.104.roguepoplimit.tooltip"
+        trigger = {
+            has_global_flag = fatherland_poploss_on
+            has_global_flag = fatherland_rogue_poplimit
+        }
+        remove_global_flag = fatherland_rogue_poplimit
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.dangerousworlds_off
+        custom_tooltip = "fatherland_setup.104.dangerousworlds.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_dangerousworlds_on
+            }
+        }
+        set_global_flag = fatherland_dangerousworlds_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.dangerousworlds_on
+        custom_tooltip = "fatherland_setup.102.dangerousworlds.tooltip"
+        trigger = {
+            has_global_flag = fatherland_dangerousworlds_on
+        }
+        remove_global_flag = fatherland_dangerousworlds_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.bonusresources_off
+        custom_tooltip = "fatherland_setup.104.bonusresources.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_bonusresources
+            }
+        }
+        set_global_flag = fatherland_bonusresources
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.bonusresources_on
+        custom_tooltip = "fatherland_setup.104.bonusresources.tooltip"
+        trigger = {
+            has_global_flag = fatherland_bonusresources
+        }
+        remove_global_flag = fatherland_bonusresources
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.interaction_header
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.instantcomms_off
+        custom_tooltip = "fatherland_setup.104.instantcomms.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_instantcomms
+            }
+        }
+        set_global_flag = fatherland_instantcomms
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.instantcomms_on
+        custom_tooltip = "fatherland_setup.104.instantcomms.tooltip"
+        trigger = {
+            has_global_flag = fatherland_instantcomms
+        }
+        remove_global_flag = fatherland_instantcomms
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.aisettings_header
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.airogues_off
+        custom_tooltip = "fatherland_setup.104.airogues.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_roguerogues_on
+            }
+        }
+        set_global_flag = fatherland_roguerogues_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.airogues_on
+        custom_tooltip = "fatherland_setup.104.airogues.tooltip"
+        trigger = {
+            has_global_flag = fatherland_roguerogues_on
+        }
+        remove_global_flag = fatherland_roguerogues_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.roguecolonyfrontier_off
+        custom_tooltip = "fatherland_setup.102.roguecolonyfrontier.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_rogueaifrontier_on
+            }
+            has_global_flag = fatherland_frontiers_active
+        }
+        set_global_flag = fatherland_rogueaifrontier_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.roguecolonyfrontier_on
+        custom_tooltip = "fatherland_setup.102.roguecolonyfrontier.tooltip"
+        trigger = {
+            has_global_flag = fatherland_rogueaifrontier_on
+            has_global_flag = fatherland_frontiers_active
+        }
+        remove_global_flag = fatherland_rogueaifrontier_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.fatherlandbonus
+        custom_tooltip = "fatherland_setup.102.fatherlandbonus.tooltip"
+        trigger = {
+            NOT = {
+                has_modifier = fatherland_outpost_bonus
+            }
+            has_global_flag = fatherland_dev_active
+        }
+        add_modifier = {
+            modifier = fatherland_outpost_bonus
+        }
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.104.returnmain
+        country_event = {
+            id = fatherland_setup.101
+        }
+    }
+}
+country_event = {
+    id = fatherland_setup.105
+    title = "fatherland_setup.105_name"
+    desc = "fatherland_setup.105_desc"
+    picture = GFX_evt_atmospheric_flight
+    is_triggered_only = yes
+    trigger = {
+    }
+    immediate = {
+        set_variable = {
+            which = fatherland_globalmax_rogues
+            value = event_target:global_event_country
+        }
+        set_variable = {
+            which = fatherland_currentglobal_rogues
+            value = event_target:global_event_country
+        }
+    }
+    option = {
+        name = fatherland_setup.105.globalmax
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.105
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.105.plusone
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_globalmax_rogues
+                    value = 1
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_globalmax_rogues
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.105
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.105.plusfive
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_globalmax_rogues
+                    value = 5
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_globalmax_rogues
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.105
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.105.minusone
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_globalmax_rogues
+                    value = -1
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_globalmax_rogues
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.105
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.105.minusfive
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_globalmax_rogues
+                    value = -5
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_globalmax_rogues
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.105
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.105.playermax
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.105
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.105.plusone
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_playermax_rogues
+                    value = 1
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_playermax_rogues
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.105
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.105.plusfive
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_playermax_rogues
+                    value = 5
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_playermax_rogues
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.105
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.105.minusone
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_playermax_rogues
+                    value = -1
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_playermax_rogues
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.105
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.105.minusfive
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_playermax_rogues
+                    value = -5
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_playermax_rogues
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.105
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.105.aimax
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.105
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.105.plusone
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_aimax_rogues
+                    value = 1
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_aimax_rogues
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.105
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.105.plusfive
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_aimax_rogues
+                    value = 5
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_aimax_rogues
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.105
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.105.minusone
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_aimax_rogues
+                    value = -1
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_aimax_rogues
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.105
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.105.minusfive
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_aimax_rogues
+                    value = -5
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_aimax_rogues
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.105
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.105.return
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.104
+            }
+        }
+    }
+}
+country_event = {
+    id = fatherland_setup.106
+    title = "fatherland_setup.106_name"
+    desc = "fatherland_setup.106_desc"
+    picture = GFX_evt_wormhole
+    is_triggered_only = yes
+    trigger = {
+    }
+    immediate = {
+    }
+    option = {
+        name = fatherland_setup.106.generalsettings_header
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.maxhegirans
+        custom_tooltip = "fatherland_setup.106.maxhegirans.tooltip"
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.107
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.limittomax_off
+        custom_tooltip = "fatherland_setup.106.limittomax.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_limittomax_hegirans
+            }
+        }
+        set_global_flag = fatherland_limittomax_hegirans
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.limittomax_on
+        custom_tooltip = "fatherland_setup.106.limittomax.tooltip"
+        trigger = {
+            has_global_flag = fatherland_limittomax_hegirans
+        }
+        remove_global_flag = fatherland_limittomax_hegirans
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.hegiraspeed
+        if = {
+            limit = {
+                has_global_flag = fatherland_slow_hegirans
+            }
+            custom_tooltip = "fatherland_setup.106.hegiraspeed.slow.tooltip"
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_global_flag = fatherland_standard_hegirans
+                    has_global_flag = fatherland_fast_hegira
+                    has_global_flag = fatherland_faster_hegira
+                }
+            }
+            custom_tooltip = "fatherland_setup.106.hegiraspeed.tooltip"
+        }
+        if = {
+            limit = {
+                has_global_flag = fatherland_fast_hegira
+            }
+            custom_tooltip = "fatherland_setup.106.hegiraspeed.fast.tooltip"
+        }
+        if = {
+            limit = {
+                has_global_flag = fatherland_faster_hegira
+            }
+            custom_tooltip = "fatherland_setup.106.hegiraspeed.faster.tooltip"
+        }
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.108
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.hegiran_hegemony_off
+        custom_tooltip = "fatherland_setup.104.hegiran_hegemony.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_hegiran_hegemony
+            }
+        }
+        set_global_flag = fatherland_hegiran_hegemony
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.hegiran_hegemony_on
+        custom_tooltip = "fatherland_setup.104.hegiran_hegemony.tooltip"
+        trigger = {
+            has_global_flag = fatherland_hegiran_hegemony
+        }
+        remove_global_flag = fatherland_hegiran_hegemony
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.instantcomms_off
+        custom_tooltip = "fatherland_setup.104.instantcomms.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_hegira_instantcomms
+            }
+        }
+        set_global_flag = fatherland_hegira_instantcomms
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.instantcomms_on
+        custom_tooltip = "fatherland_setup.104.instantcomms.tooltip"
+        trigger = {
+            has_global_flag = fatherland_hegira_instantcomms
+        }
+        remove_global_flag = fatherland_hegira_instantcomms
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.poploss_off
+        custom_tooltip = "fatherland_setup.104.poploss.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_hegira_poploss_on
+            }
+        }
+        set_global_flag = fatherland_hegira_poploss_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.poploss_on
+        custom_tooltip = "fatherland_setup.104.poploss.tooltip"
+        trigger = {
+            has_global_flag = fatherland_hegira_poploss_on
+        }
+        remove_global_flag = fatherland_hegira_poploss_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.dangerousworlds_off
+        custom_tooltip = "fatherland_setup.106.dangerousworlds.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_hegiran_dangerousworlds_on
+            }
+        }
+        set_global_flag = fatherland_hegiran_dangerousworlds_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.dangerousworlds_on
+        custom_tooltip = "fatherland_setup.106.dangerousworlds.tooltip"
+        trigger = {
+            has_global_flag = fatherland_hegiran_dangerousworlds_on
+        }
+        remove_global_flag = fatherland_hegiran_dangerousworlds_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.bonusresources_off
+        custom_tooltip = "fatherland_setup.104.bonusresources.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_hegira_bonusresources
+            }
+        }
+        set_global_flag = fatherland_hegira_bonusresources
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.bonusresources_on
+        custom_tooltip = "fatherland_setup.106.bonusresources.tooltip"
+        trigger = {
+            has_global_flag = fatherland_hegira_bonusresources
+        }
+        remove_global_flag = fatherland_hegira_bonusresources
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.aisettings_header
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.airogues_off
+        custom_tooltip = "fatherland_setup.106.airogues.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_hegira_rogues_on
+            }
+            has_global_flag = fatherland_rogues_active
+        }
+        set_global_flag = fatherland_hegira_rogues_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.airogues_on
+        custom_tooltip = "fatherland_setup.106.airogues.tooltip"
+        trigger = {
+            has_global_flag = fatherland_hegira_rogues_on
+            has_global_flag = fatherland_rogues_active
+        }
+        remove_global_flag = fatherland_hegira_rogues_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.hegiran_frontier_off
+        custom_tooltip = "fatherland_setup.106.hegirafrontier.tooltip"
+        trigger = {
+            NOT = {
+                has_global_flag = fatherland_hegira_ai_frontier_on
+            }
+            has_global_flag = fatherland_frontiers_active
+        }
+        set_global_flag = fatherland_hegira_ai_frontier_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.hegiran_frontier_on
+        custom_tooltip = "fatherland_setup.106.hegirafrontier.tooltip"
+        trigger = {
+            has_global_flag = fatherland_hegira_ai_frontier_on
+            has_global_flag = fatherland_frontiers_active
+        }
+        remove_global_flag = fatherland_hegira_ai_frontier_on
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.106
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.106.returnmain
+        country_event = {
+            id = fatherland_setup.101
+        }
+    }
+}
+country_event = {
+    id = fatherland_setup.107
+    title = "fatherland_setup.107_name"
+    desc = "fatherland_setup.107_desc"
+    picture = GFX_evt_wormhole
+    is_triggered_only = yes
+    trigger = {
+    }
+    immediate = {
+        set_variable = {
+            which = fatherland_globalmax_hegirans
+            value = event_target:global_event_country
+        }
+        set_variable = {
+            which = fatherland_currentglobal_hegirans
+            value = event_target:global_event_country
+        }
+    }
+    option = {
+        name = fatherland_setup.107.globalmax
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.107
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.107.plusone
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_globalmax_hegirans
+                    value = 1
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_globalmax_hegirans
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.107
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.107.plusfive
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_globalmax_hegirans
+                    value = 5
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_globalmax_hegirans
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.107
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.107.minusone
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_globalmax_rogues
+                    value = -1
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_globalmax_hegirans
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.107
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.107.minusfive
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_globalmax_hegirans
+                    value = -5
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_globalmax_hegirans
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.107
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.107.playermax
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.107
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.107.plusone
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_playermax_hegirans
+                    value = 1
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_playermax_hegirans
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.107
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.107.plusfive
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_playermax_hegirans
+                    value = 5
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_playermax_hegirans
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.107
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.107.minusone
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_playermax_hegirans
+                    value = -1
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_playermax_hegirans
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.107
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.107.minusfive
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_playermax_hegirans
+                    value = -5
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_playermax_hegirans
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.107
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.107.aimax
+        hidden_effect = {
+            country_event = {
+                id = fatherland_setup.107
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.107.plusone
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_aimax_hegirans
+                    value = 1
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_aimax_hegirans
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.107
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.107.plusfive
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_aimax_hegirans
+                    value = 5
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_aimax_hegirans
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.107
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.107.minusone
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_aimax_hegirans
+                    value = -1
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_aimax_hegirans
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.107
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.107.minusfive
+        hidden_effect = {
+            event_target:global_event_country = {
+                change_variable = {
+                    which = fatherland_aimax_hegirans
+                    value = -5
+                }
+            }
+            root = {
+                set_variable = {
+                    which = fatherland_aimax_hegirans
+                    value = event_target:global_event_country
+                }
+                country_event = {
+                    id = fatherland_setup.107
+                }
+            }
+        }
+    }
+    option = {
+        name = fatherland_setup.107.return
+        country_event = {
+            id = fatherland_setup.106
+        }
+    }
+}
+country_event = {
+    id = fatherland_setup.108
+    title = "fatherland_setup.108_name"
+    desc = "fatherland_setup.108_desc"
+    picture = GFX_evt_wormhole
+    is_triggered_only = yes
+    trigger = {
+    }
+    immediate = {
+    }
+    option = {
+        name = fatherland_setup.108.hegira.slow
+        country_event = {
+            id = fatherland_setup.106
+        }
+        set_global_flag = fatherland_slow_hegirans
+        remove_global_flag = fatherland_standard_hegirans
+        remove_global_flag = fatherland_fast_hegira
+        remove_global_flag = fatherland_faster_hegira
+    }
+    option = {
+        name = fatherland_setup.108.hegira.default
+        country_event = {
+            id = fatherland_setup.106
+        }
+        set_global_flag = fatherland_standard_hegirans
+        remove_global_flag = fatherland_slow_hegirans
+        remove_global_flag = fatherland_fast_hegira
+        remove_global_flag = fatherland_faster_hegira
+    }
+    option = {
+        name = fatherland_setup.108.hegira.fast
+        country_event = {
+            id = fatherland_setup.106
+        }
+        remove_global_flag = fatherland_slow_hegirans
+        remove_global_flag = fatherland_standard_hegirans
+        set_global_flag = fatherland_fast_hegira
+        remove_global_flag = fatherland_faster_hegira
+    }
+    option = {
+        name = fatherland_setup.108.hegira.faster
+        country_event = {
+            id = fatherland_setup.106
+        }
+        remove_global_flag = fatherland_slow_hegirans
+        remove_global_flag = fatherland_standard_hegirans
+        remove_global_flag = fatherland_fast_hegira
+        set_global_flag = fatherland_faster_hegira
+    }
+    option = {
+        name = fatherland_setup.108.exit
+        country_event = {
+            id = fatherland_setup.106
+        }
+    }
+}
+country_event = {
+    id = fatherland_setup.109
+    title = "fatherland_setup.109_name"
+    desc = "fatherland_setup.109_desc"
+    picture = GFX_evt_wormhole
+    is_triggered_only = yes
+    trigger = {
+    }
+    immediate = {
+    }
+    option = {
+        name = fatherland_setup.109.rogue.default
+        country_event = {
+            id = fatherland_setup.104
+        }
+        set_global_flag = fatherland_standard_rogues
+        remove_global_flag = fatherland_fast_rogues
+        remove_global_flag = fatherland_faster_rogues
+        remove_global_flag = fatherland_veryfast_rogues
+    }
+    option = {
+        name = fatherland_setup.109.rogue.fast
+        country_event = {
+            id = fatherland_setup.104
+        }
+        remove_global_flag = fatherland_standard_rogues
+        set_global_flag = fatherland_fast_rogues
+        remove_global_flag = fatherland_faster_rogues
+        remove_global_flag = fatherland_veryfast_rogues
+    }
+    option = {
+        name = fatherland_setup.109.rogue.faster
+        country_event = {
+            id = fatherland_setup.104
+        }
+        remove_global_flag = fatherland_standard_rogues
+        remove_global_flag = fatherland_fast_rogues
+        set_global_flag = fatherland_faster_rogues
+        remove_global_flag = fatherland_veryfast_rogues
+    }
+    option = {
+        name = fatherland_setup.109.rogue.veryfast
+        country_event = {
+            id = fatherland_setup.104
+        }
+        remove_global_flag = fatherland_standard_rogues
+        remove_global_flag = fatherland_fast_rogues
+        remove_global_flag = fatherland_faster_rogues
+        set_global_flag = fatherland_veryfast_rogues
+    }
+    option = {
+        name = fatherland_setup.109.rogue.exit
+        country_event = {
+            id = fatherland_setup.104
+        }
+    }
+}
+country_event = {
+    id = fatherland_setup.110
+    title = "fatherland_setup.110_name"
+    desc = "fatherland_setup.110_desc"
+    picture = GFX_evt_wormhole
+    is_triggered_only = yes
+    trigger = {
+    }
+    immediate = {
+    }
+    option = {
+        name = fatherland_setup.110.fw.slow
+        country_event = {
+            id = fatherland_setup.104
+        }
+        set_global_flag = fatherland_slow_fw
+        remove_global_flag = fatherland_fast_fw
+        remove_global_flag = fatherland_faster_fw
+        remove_global_flag = fatherland_veryfast_fw
+    }
+    option = {
+        name = fatherland_setup.110.fw.default
+        country_event = {
+            id = fatherland_setup.104
+        }
+        remove_global_flag = fatherland_slow_fw
+        remove_global_flag = fatherland_fast_fw
+        remove_global_flag = fatherland_faster_fw
+        remove_global_flag = fatherland_veryfast_fw
+    }
+    option = {
+        name = fatherland_setup.110.fw.fast
+        country_event = {
+            id = fatherland_setup.104
+        }
+        remove_global_flag = fatherland_slow_fw
+        set_global_flag = fatherland_fast_fw
+        remove_global_flag = fatherland_faster_fw
+        remove_global_flag = fatherland_veryfast_fw
+    }
+    option = {
+        name = fatherland_setup.110.fw.faster
+        country_event = {
+            id = fatherland_setup.104
+        }
+        remove_global_flag = fatherland_slow_fw
+        remove_global_flag = fatherland_fast_fw
+        set_global_flag = fatherland_faster_fw
+        remove_global_flag = fatherland_veryfast_fw
+    }
+    option = {
+        name = fatherland_setup.110.fw.veryfast
+        country_event = {
+            id = fatherland_setup.104
+        }
+        remove_global_flag = fatherland_slow_fw
+        remove_global_flag = fatherland_fast_fw
+        remove_global_flag = fatherland_faster_fw
+        set_global_flag = fatherland_veryfast_fw
+    }
+    option = {
+        name = fatherland_setup.110.fw.exit
+        country_event = {
+            id = fatherland_setup.102
+        }
+    }
+}

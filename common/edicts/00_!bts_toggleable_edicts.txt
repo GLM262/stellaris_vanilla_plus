@@ -1,0 +1,33 @@
+@Edict1Cost_1 = 100
+@Edict2Cost_1 = 200
+@EdictPerpetual_1 = -1
+bts_shadow_masters = {
+    length = @EdictPerpetual_1
+    icon = "GFX_edict_type_policy"
+    edict_cap_usage = 1
+    resources = {
+        category = edicts
+        cost = {
+            trigger = {
+                NOT = {
+                    has_edict = bts_shadow_masters
+                }
+            }
+            influence = @Edict2Cost_1
+        }
+        cost = {
+            trigger = {
+                has_edict = bts_shadow_masters
+            }
+            influence = @Edict1Cost_1
+        }
+    }
+    modifier = {
+    }
+    potential = {
+        has_origin = origin_bts
+    }
+    ai_weight = {
+        weight = @EdictLowPrio
+    }
+}

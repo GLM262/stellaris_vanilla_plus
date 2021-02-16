@@ -1,0 +1,13 @@
+﻿l_english:
+    necromancer_key_1:1000 "After successful army battles, this leader will reanimate fallen enemies to fight for your empire."
+    leader_trait_necromancer:1000 "Necromancer"
+    leader_trait_necromancer_desc:1000 ""Not even death can save you from me.""
+    leader_trait_monkeys_paw:1000 "Monkeys Paw"
+    leader_trait_monkeys_paw_desc:1000 ""Power comes with a price.""
+    monkeys.paw.name:1000 "A Sacrifice"
+    monkeys.paw.desc:1000 "Death is inevitable, but it's not the end of the story for our general. Their life has been sacrificed, but their body shall remain as a vessel for something greater. Preparations have been made for the corpse to be placed in the catacombs beneath the §H[Root.GetHomeWorldName]§! capital. It's only a matter of time before we get an answer from our pact with §HThe Beyond§!."
+    monkeys.paw.a:1000 "We will honor this moment."
+    monkeys.paw.b:1000 "Another one bites the dust."
+    monkeys.paw2.name:1000 "A Deal Completed"
+    monkeys.paw2.desc:1000 "From within the catacombs emerges the body of our fallen general, reanimated with new life. Our pact with §HThe Beyond§! remains strong, and as we provide new souls for them to feast on, they provide us with powerful leaders. This inevitable cycle of life and death will continue."
+    monkeys.paw.c:1000 "Welcome Commander, your armies have been waiting for you."

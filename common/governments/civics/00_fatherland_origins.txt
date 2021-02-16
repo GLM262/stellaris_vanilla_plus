@@ -1,0 +1,81 @@
+origin_fatherland = {
+    is_origin = yes
+    icon = "gfx/interface/icons/origins/origins_common_ground.dds"
+    picture = GFX_origin_fatherland
+    max_once_global = yes
+    advanced_start = yes
+    playable = {
+        always = no
+    }
+    potential = {
+        always = yes
+    }
+    random_weight = {
+        base = 0
+    }
+    description = "origin_tooltip_fatherland"
+}
+origin_rogue_colony = {
+    is_origin = yes
+    icon = "gfx/interface/icons/origins/origins_common_ground.dds"
+    picture = GFX_origin_rogue_colony
+    playable = {
+        always = no
+    }
+    potential = {
+        always = yes
+    }
+    possible = {
+        always = yes
+    }
+    random_weight = {
+        base = 0
+    }
+    description = "origin_tooltip_rogue_colony"
+    advanced_start = no
+    flags = {
+        custom_start_screen
+    }
+}
+origin_frontier_world = {
+    is_origin = yes
+    icon = "gfx/interface/icons/origins/origins_default.dds"
+    picture = GFX_origin_frontier_world
+    playable = {
+        always = no
+    }
+    potential = {
+        always = yes
+    }
+    possible = {
+        ethics = {
+            NOT = {
+                value = ethic_gestalt_consciousness
+            }
+        }
+    }
+    random_weight = {
+        base = 0
+    }
+    description = "origin_tooltip_frontier_world"
+    advanced_start = no
+}
+origin_hegira_colony = {
+    is_origin = yes
+    icon = "gfx/interface/icons/origins/origins_doomsday.dds"
+    picture = GFX_origin_hegira_colony
+    playable = {
+        always = no
+    }
+    potential = {
+        always = yes
+    }
+    possible = {
+        always = yes
+    }
+    random_weight = {
+        base = 0
+    }
+    description = "origin_tooltip_hegira_colony"
+    advanced_start = no
+}

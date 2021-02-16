@@ -1,0 +1,111 @@
+namespace = containment_failure_digsite
+fleet_event = {
+    id = containment_failure_digsite.1
+    title = containment_failure_digsite.1.name
+    desc = containment_failure_digsite.1.desc
+    picture = GFX_evt_cold_barren
+    show_sound = event_scanner
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = {
+            set_site_progress_locked = yes
+        }
+    }
+    after = {
+        fromfrom = {
+            set_site_progress_locked = no
+        }
+    }
+    option = {
+        name = OK
+        owner = {
+            add_monthly_resource_mult = {
+                resource = engineering_research
+                value = @tier2researchreward
+                min = @tier2researchmin
+                max = @tier2researchmax
+            }
+        }
+        fromfrom.planet = {
+            add_deposit = d_physics_2
+        }
+    }
+}
+fleet_event = {
+    id = containment_failure_digsite.2
+    title = containment_failure_digsite.2.name
+    desc = containment_failure_digsite.2.desc
+    picture = GFX_evt_drilling_for_gas
+    show_sound = event_ship_thrusters
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = {
+            set_site_progress_locked = yes
+        }
+    }
+    after = {
+        fromfrom = {
+            set_site_progress_locked = no
+        }
+    }
+    option = {
+        name = UNDERSTOOD
+        fromfrom.planet = {
+            add_deposit = d_engineering_2
+        }
+    }
+}
+fleet_event = {
+    id = containment_failure_digsite.3
+    title = containment_failure_digsite.3.name
+    desc = containment_failure_digsite.3.desc
+    picture = GFX_evt_sapient_AI
+    show_sound = event_power_down
+    location = from
+    archaeology = yes
+    is_triggered_only = yes
+    immediate = {
+        fromfrom = {
+            set_site_progress_locked = yes
+        }
+    }
+    after = {
+        fromfrom = {
+            set_site_progress_locked = no
+        }
+    }
+    option = {
+        name = FASCINATING
+        owner = {
+            hidden_effect = {
+                random_owned_planet = {
+                    limit = {
+                        is_capital = yes
+                    }
+                    planet_event = {
+                        id = containment_failure.11
+                        days = 720
+                    }
+                }
+            }
+            add_resource = {
+                minerals = 1000
+            }
+            add_monthly_resource_mult = {
+                resource = unity
+                value = @tier2unityreward
+                min = @tier2unitymin
+                max = @tier2unitymax
+            }
+        }
+        fromfrom.planet = {
+            add_deposit = d_physics_1
+            add_deposit = d_society_1
+            add_deposit = d_engineering_1
+        }
+    }
+}

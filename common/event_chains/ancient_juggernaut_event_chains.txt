@@ -1,0 +1,21 @@
+ancient_juggernaut_chain = {
+    icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+    picture = GFX_evt_origin_ancient_juggernaut
+    counter = {
+        ancient_juggernaut_research_ship = {
+            max = 4
+        }
+        ancient_juggernaut_research_armor = {
+            max = 4
+        }
+        ancient_juggernaut_research_shield = {
+            max = 4
+        }
+        ancient_juggernaut_research_thruster = {
+            max = 3
+        }
+        ancient_juggernaut_research_ftl = {
+            max = 2
+        }
+    }
+}

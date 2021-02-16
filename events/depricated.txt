@@ -1,0 +1,51 @@
+option = {
+    name = fatherland_rogue.100.capture
+    custom_tooltip = "fatherland_rogue.100.capture.tooltip"
+    trigger = {
+        has_policy_flag = iron_curtain
+    }
+    hidden_effect = {
+        random_list = {
+            50 = {
+                capital_scope = {
+                    random_pop = {
+                        kill_pop = yes
+                    }
+                }
+                create_fleet = {
+                    effect = {
+                        set_owner = prev
+                        create_ship = {
+                            name = random
+                            random_existing_design = colonizer
+                        }
+                        set_location = prev.capital_scope
+                    }
+                }
+            }
+            50 = {
+                capital_scope = {
+                    random_pop = {
+                        kill_pop = yes
+                    }
+                }
+            }
+        }
+        remove_country_flag = fatherland_roguesetup_explorers
+        remove_country_flag = fatherland_roguesetup_ai
+        remove_country_flag = fatherland_roguesetup_banished
+        remove_country_flag = fatherland_roguesetup_biotrophy
+        remove_country_flag = fatherland_roguesetup_corpo
+        remove_country_flag = fatherland_roguesetup_crusader
+        remove_country_flag = fatherland_roguesetup_dissidents
+        remove_country_flag = fatherland_roguesetup_minority
+        remove_country_flag = fatherland_roguesetup_proles
+        remove_country_flag = fatherland_roguesetup_slaves
+        event_target:rogue_event_planet = {
+            remove_modifier = rogue_target
+            remove_planet_flag = rogue_target
+            clear_global_event_target = rogue_event_planet
+        }
+        clear_global_event_target = fatherland_species
+    }
+}

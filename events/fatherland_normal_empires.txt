@@ -1,0 +1,114 @@
+namespace = fatherland_normalempires
+country_event = {
+    id = fatherland_normalempires.100
+    title = "fatherland_normalempires.100_name"
+    desc = "fatherland_normalempires.100_desc"
+    picture = GFX_evt_wormhole
+    is_triggered_only = yes
+    hide_window = yes
+    immediate = {
+        set_variable = {
+            which = fatherland_currentglobal_rogues
+            value = event_target:global_event_country
+        }
+        set_variable = {
+            which = fatherland_globalmax_rogues
+            value = event_target:global_event_country
+        }
+        set_variable = {
+            which = fatherland_aimax_rogues
+            value = event_target:global_event_country
+        }
+    }
+}
+country_event = {
+    id = fatherland_normalempires.101
+    title = "fatherland_normalempires.101_name"
+    desc = "fatherland_normalempires.101_desc"
+    picture = GFX_evt_burning_settlement
+    is_triggered_only = yes
+    hide_window = yes
+    trigger = {
+        is_country_type = default
+        any_owned_planet = {
+            count_pops = {
+                count > 1
+            }
+        }
+        NOR = {
+            has_origin = origin_rogue_colony
+            has_origin = origin_hegira_colony
+            has_origin = origin_frontier_world
+        }
+    }
+    immediate = {
+        event_target:global_event_country = {
+            set_variable = {
+                which = fatherland_currentglobal_normalempires
+                value = 0
+            }
+        }
+        country_event = {
+            id = fatherland_normalempires.102
+            days = 5
+        }
+    }
+}
+country_event = {
+    id = fatherland_normalempires.102
+    title = "fatherland_normalempires.102_name"
+    desc = "fatherland_normalempires.102_desc"
+    picture = GFX_evt_burning_settlement
+    is_triggered_only = yes
+    hide_window = yes
+    trigger = {
+        is_country_type = default
+        NOR = {
+            has_origin = origin_rogue_colony
+            has_origin = origin_hegira_colony
+            has_origin = origin_frontier_world
+        }
+    }
+    immediate = {
+        event_target:global_event_country = {
+            change_variable = {
+                which = fatherland_currentglobal_normalempires
+                value = 1
+            }
+        }
+        country_event = {
+            id = fatherland_normalempires.100
+            days = 2
+        }
+    }
+}
+country_event = {
+    id = fatherland_normalempires.999
+    is_triggered_only = yes
+    hide_window = yes
+    trigger = {
+        is_country_type = default
+        NOR = {
+            has_origin = origin_rogue_colony
+            has_origin = origin_hegira_colony
+            has_origin = origin_frontier_world
+        }
+    }
+    immediate = {
+        event_target:global_event_country = {
+            change_variable = {
+                which = fatherland_currentglobal_normalempires
+                value = -1
+            }
+            change_variable = {
+                which = fatherland_destroyed_normalempires
+                value = 1
+            }
+        }
+        every_country = {
+            country_event = {
+                id = fatherland_normalempires.100
+            }
+        }
+    }
+}

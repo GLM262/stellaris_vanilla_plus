@@ -1,0 +1,160 @@
+@cost1_1 = 3
+@cost2_1 = 6
+@cost3_1 = 9
+@cost4_1 = 12
+@cost4_2 = 12
+@power_1_1 = -10
+@power_2_1 = -15
+@power_3_1 = -20
+@power_4_1 = -25
+@power_5_1 = -30
+utility_component_template = {
+    key = "EAC_PDF_PATROL_CRAFT_THRUSTER_1"
+    size = small
+    icon = "GFX_ship_part_thruster_1"
+    icon_frame = 1
+    power = @power_1_1
+    resources = {
+        category = ship_components
+        cost = {
+            alloys = @cost1_1
+        }
+    }
+    modifier = {
+    }
+    prerequisites = {
+        "tech_thrusters_1"
+    }
+    component_set = "thruster_components"
+    size_restriction = {
+        eac_pdf_patrol_craft_1
+        eac_pdf_patrol_craft_2
+    }
+    upgrades_to = "EAC_PDF_PATROL_CRAFT_THRUSTER_2"
+    ai_weight = {
+        weight = 1
+    }
+}
+utility_component_template = {
+    key = "EAC_PDF_PATROL_CRAFT_THRUSTER_2"
+    size = small
+    icon = "GFX_ship_part_thruster_2"
+    icon_frame = 1
+    power = @power_2_1
+    resources = {
+        category = ship_components
+        cost = {
+            alloys = @cost2_1
+        }
+    }
+    modifier = {
+        ship_base_speed_mult = 0.25
+        ship_evasion_add = 5
+    }
+    prerequisites = {
+        "tech_thrusters_2"
+    }
+    component_set = "thruster_components"
+    size_restriction = {
+        eac_pdf_patrol_craft_1
+        eac_pdf_patrol_craft_2
+    }
+    upgrades_to = "EAC_PDF_PATROL_CRAFT_THRUSTER_3"
+    ai_weight = {
+        weight = 2
+    }
+}
+utility_component_template = {
+    key = "EAC_PDF_PATROL_CRAFT_THRUSTER_3"
+    size = small
+    icon = "GFX_ship_part_thruster_3"
+    icon_frame = 1
+    power = @power_3_1
+    resources = {
+        category = ship_components
+        cost = {
+            alloys = @cost3_1
+        }
+    }
+    modifier = {
+        ship_base_speed_mult = 0.50
+        ship_evasion_add = 10
+    }
+    prerequisites = {
+        "tech_thrusters_3"
+    }
+    component_set = "thruster_components"
+    size_restriction = {
+        eac_pdf_patrol_craft_1
+        eac_pdf_patrol_craft_2
+    }
+    upgrades_to = "EAC_PDF_PATROL_CRAFT_THRUSTER_4"
+    ai_weight = {
+        weight = 3
+    }
+}
+utility_component_template = {
+    key = "EAC_PDF_PATROL_CRAFT_THRUSTER_4"
+    size = small
+    icon = "GFX_ship_part_thruster_4"
+    icon_frame = 1
+    power = @power_4_1
+    resources = {
+        category = ship_components
+        cost = {
+            alloys = @cost4_2
+        }
+    }
+    modifier = {
+        ship_base_speed_mult = 0.75
+        ship_evasion_add = 15
+    }
+    prerequisites = {
+        "tech_thrusters_4"
+    }
+    component_set = "thruster_components"
+    size_restriction = {
+        eac_pdf_patrol_craft_1
+        eac_pdf_patrol_craft_2
+    }
+    upgrades_to = "EAC_PDF_PATROL_CRAFT_THRUSTER_5"
+    ai_weight = {
+        weight = 4
+    }
+}
+utility_component_template = {
+    key = "EAC_PDF_PATROL_CRAFT_THRUSTER_5"
+    size = small
+    icon = "GFX_ship_part_thruster_5"
+    icon_frame = 1
+    power = @power_5_1
+    resources = {
+        category = ship_components
+        cost = {
+            alloys = @cost4_1
+            sr_dark_matter = 1
+        }
+    }
+    modifier = {
+        ship_base_speed_mult = 1.25
+        ship_evasion_add = 20
+    }
+    prerequisites = {
+        "tech_dark_matter_propulsion"
+    }
+    component_set = "thruster_components"
+    size_restriction = {
+        eac_pdf_patrol_craft_1
+        eac_pdf_patrol_craft_2
+    }
+    ai_weight = {
+        weight = 5
+        modifier = {
+            factor = 0.0
+            has_monthly_income = {
+                resource = sr_dark_matter
+                value <= 0
+            }
+        }
+    }
+}

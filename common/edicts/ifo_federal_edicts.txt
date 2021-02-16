@@ -1,0 +1,601 @@
+@Edict10Years_1 = 3600
+@Edict10Years_10 = 3600
+@Edict10Years_11 = 3600
+@Edict10Years_12 = 3600
+@Edict10Years_13 = 3600
+@Edict10Years_14 = 3600
+@Edict10Years_2 = 3600
+@Edict10Years_3 = 3600
+@Edict10Years_4 = 3600
+@Edict10Years_5 = 3600
+@Edict10Years_6 = 3600
+@Edict10Years_7 = 3600
+@Edict10Years_8 = 3600
+@Edict10Years_9 = 3600
+@Edict2Cost_1 = 200
+@Edict2Cost_10 = 200
+@Edict2Cost_11 = 200
+@Edict2Cost_12 = 200
+@Edict2Cost_2 = 200
+@Edict2Cost_3 = 200
+@Edict2Cost_4 = 200
+@Edict2Cost_5 = 200
+@Edict2Cost_6 = 200
+@Edict2Cost_7 = 200
+@Edict2Cost_8 = 200
+@Edict2Cost_9 = 200
+@Edict3Cost_1 = 300
+@Edict3Cost_2 = 300
+ifo_fed_ethic_authoritarian = {
+    length = @Edict10Years_14
+    icon = "GFX_edict_type_policy"
+    edict_cap_usage = 1
+    resources = {
+        category = edicts
+        cost = {
+            influence = @Edict2Cost_12
+        }
+    }
+    modifier = {
+    }
+    potential = {
+        has_origin = ifo_origin_fleet
+        exists = federation
+        or = {
+            has_ethic = ethic_authoritarian
+            has_ethic = ethic_fanatic_authoritarian
+        }
+    }
+    effect = {
+        custom_tooltip = edict_ifo_fed_ethic_authoritarian_effect
+        hidden_effect = {
+            every_federation_ally = {
+                limit = {
+                    not = {
+                        is_same_empire = prev
+                    }
+                }
+                add_modifier = {
+                    modifier = ifo_fed_ethic_authoritarian
+                    days = @Edict10Years_14
+                }
+            }
+        }
+    }
+    ai_weight = {
+        weight = 0
+    }
+}
+ifo_fed_ethic_egalitarian = {
+    length = @Edict10Years_13
+    icon = "GFX_edict_type_policy"
+    edict_cap_usage = 1
+    resources = {
+        category = edicts
+        cost = {
+            influence = @Edict2Cost_11
+        }
+    }
+    modifier = {
+    }
+    potential = {
+        has_origin = ifo_origin_fleet
+        exists = federation
+        or = {
+            has_ethic = ethic_egalitarian
+            has_ethic = ethic_fanatic_egalitarian
+        }
+    }
+    effect = {
+        custom_tooltip = edict_ifo_fed_ethic_egalitarian_effect
+        hidden_effect = {
+            every_federation_ally = {
+                limit = {
+                    not = {
+                        is_same_empire = prev
+                    }
+                }
+                add_modifier = {
+                    modifier = ifo_fed_ethic_egalitarian
+                    days = @Edict10Years_13
+                }
+            }
+        }
+    }
+    ai_weight = {
+        weight = 0
+    }
+}
+ifo_fed_ethic_xenophobe = {
+    length = @Edict10Years_12
+    icon = "GFX_edict_type_policy"
+    edict_cap_usage = 1
+    resources = {
+        category = edicts
+        cost = {
+            influence = @Edict2Cost_10
+        }
+    }
+    modifier = {
+    }
+    potential = {
+        has_origin = ifo_origin_fleet
+        exists = federation
+        or = {
+            has_ethic = ethic_xenophobe
+            has_ethic = ethic_fanatic_xenophobe
+        }
+    }
+    effect = {
+        custom_tooltip = edict_ifo_fed_ethic_xenophobe_effect
+        hidden_effect = {
+            every_federation_ally = {
+                limit = {
+                    not = {
+                        is_same_empire = prev
+                    }
+                }
+                add_modifier = {
+                    modifier = ifo_fed_ethic_xenophobe
+                    days = @Edict10Years_12
+                }
+            }
+        }
+    }
+    ai_weight = {
+        weight = 0
+    }
+}
+ifo_fed_ethic_xenophile = {
+    length = @Edict10Years_11
+    icon = "GFX_edict_type_policy"
+    edict_cap_usage = 1
+    resources = {
+        category = edicts
+        cost = {
+            influence = @Edict2Cost_9
+        }
+    }
+    modifier = {
+    }
+    potential = {
+        has_origin = ifo_origin_fleet
+        exists = federation
+        or = {
+            has_ethic = ethic_xenophile
+            has_ethic = ethic_fanatic_xenophile
+        }
+    }
+    effect = {
+        custom_tooltip = edict_ifo_fed_ethic_xenophile_effect
+        hidden_effect = {
+            every_federation_ally = {
+                limit = {
+                    not = {
+                        is_same_empire = prev
+                    }
+                }
+                add_modifier = {
+                    modifier = ifo_fed_ethic_xenophile
+                    days = @Edict10Years_11
+                }
+            }
+        }
+    }
+    ai_weight = {
+        weight = 0
+    }
+}
+ifo_fed_ethic_pacifist = {
+    length = @Edict10Years_10
+    icon = "GFX_edict_type_policy"
+    edict_cap_usage = 1
+    resources = {
+        category = edicts
+        cost = {
+            influence = @Edict2Cost_8
+        }
+    }
+    modifier = {
+    }
+    potential = {
+        has_origin = ifo_origin_fleet
+        exists = federation
+        or = {
+            has_ethic = ethic_pacifist
+            has_ethic = ethic_fanatic_pacifist
+        }
+    }
+    effect = {
+        custom_tooltip = edict_ifo_fed_ethic_pacifist_effect
+        hidden_effect = {
+            every_federation_ally = {
+                limit = {
+                    not = {
+                        is_same_empire = prev
+                    }
+                }
+                add_modifier = {
+                    modifier = ifo_fed_ethic_pacifist
+                    days = @Edict10Years_10
+                }
+            }
+        }
+    }
+    ai_weight = {
+        weight = 0
+    }
+}
+ifo_fed_ethic_militarist = {
+    length = @Edict10Years_9
+    icon = "GFX_edict_type_policy"
+    edict_cap_usage = 1
+    resources = {
+        category = edicts
+        cost = {
+            influence = @Edict2Cost_7
+        }
+    }
+    modifier = {
+    }
+    potential = {
+        has_origin = ifo_origin_fleet
+        exists = federation
+        or = {
+            has_ethic = ethic_militarist
+            has_ethic = ethic_fanatic_militarist
+        }
+    }
+    effect = {
+        custom_tooltip = edict_ifo_fed_ethic_militarist_effect
+        hidden_effect = {
+            every_federation_ally = {
+                limit = {
+                    not = {
+                        is_same_empire = prev
+                    }
+                }
+                add_modifier = {
+                    modifier = ifo_fed_ethic_militarist
+                    days = @Edict10Years_9
+                }
+            }
+        }
+    }
+    ai_weight = {
+        weight = 0
+    }
+}
+ifo_fed_ethic_spiritualist = {
+    length = @Edict10Years_8
+    icon = "GFX_edict_type_policy"
+    edict_cap_usage = 1
+    resources = {
+        category = edicts
+        cost = {
+            influence = @Edict2Cost_6
+        }
+    }
+    modifier = {
+    }
+    potential = {
+        has_origin = ifo_origin_fleet
+        exists = federation
+        or = {
+            has_ethic = ethic_spiritualist
+            has_ethic = ethic_fanatic_spiritualist
+        }
+    }
+    effect = {
+        custom_tooltip = edict_ifo_fed_ethic_spiritualist_effect
+        hidden_effect = {
+            every_federation_ally = {
+                limit = {
+                    not = {
+                        is_same_empire = prev
+                    }
+                }
+                add_modifier = {
+                    modifier = ifo_fed_ethic_spiritualist
+                    days = @Edict10Years_8
+                }
+            }
+        }
+    }
+    ai_weight = {
+        weight = 0
+    }
+}
+ifo_fed_ethic_materialist = {
+    length = @Edict10Years_7
+    icon = "GFX_edict_type_policy"
+    edict_cap_usage = 1
+    resources = {
+        category = edicts
+        cost = {
+            influence = @Edict2Cost_5
+        }
+    }
+    modifier = {
+    }
+    potential = {
+        has_origin = ifo_origin_fleet
+        exists = federation
+        or = {
+            has_ethic = ethic_materialist
+            has_ethic = ethic_fanatic_materialist
+        }
+    }
+    effect = {
+        custom_tooltip = edict_ifo_fed_ethic_materialist_effect
+        hidden_effect = {
+            every_federation_ally = {
+                limit = {
+                    not = {
+                        is_same_empire = prev
+                    }
+                }
+                add_modifier = {
+                    modifier = ifo_fed_ethic_materialist
+                    days = @Edict10Years_7
+                }
+            }
+        }
+    }
+    ai_weight = {
+        weight = 0
+    }
+}
+ifo_fed_focus_balanced = {
+    length = @Edict10Years_6
+    icon = "GFX_edict_type_policy"
+    edict_cap_usage = 1
+    resources = {
+        category = edicts
+        cost = {
+            influence = @Edict2Cost_4
+        }
+    }
+    modifier = {
+    }
+    potential = {
+        has_origin = ifo_origin_fleet
+        exists = federation
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = ifo_fed_focus_active
+            nor = {
+                has_edict = ifo_fed_focus_production
+                has_edict = ifo_fed_focus_manufacturing
+                has_edict = ifo_fed_focus_research
+            }
+        }
+    }
+    effect = {
+        custom_tooltip = edict_ifo_fed_focus_balanced_effect
+        hidden_effect = {
+            every_federation_ally = {
+                limit = {
+                    not = {
+                        is_same_empire = prev
+                    }
+                }
+                every_sector = {
+                    set_sector_focus = balanced
+                }
+            }
+        }
+    }
+    ai_weight = {
+        weight = 0
+    }
+}
+ifo_fed_focus_production = {
+    length = @Edict10Years_5
+    icon = "GFX_edict_type_policy"
+    edict_cap_usage = 1
+    resources = {
+        category = edicts
+        cost = {
+            influence = @Edict2Cost_3
+        }
+    }
+    modifier = {
+    }
+    potential = {
+        has_origin = ifo_origin_fleet
+        exists = federation
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = ifo_fed_focus_active
+            nor = {
+                has_edict = ifo_fed_focus_balanced
+                has_edict = ifo_fed_focus_manufacturing
+                has_edict = ifo_fed_focus_research
+            }
+        }
+    }
+    effect = {
+        custom_tooltip = edict_ifo_fed_focus_production_effect
+        hidden_effect = {
+            every_federation_ally = {
+                limit = {
+                    not = {
+                        is_same_empire = prev
+                    }
+                }
+                every_sector = {
+                    set_sector_focus = production
+                }
+            }
+        }
+    }
+    ai_weight = {
+        weight = 0
+    }
+}
+ifo_fed_focus_manufacturing = {
+    length = @Edict10Years_4
+    icon = "GFX_edict_type_policy"
+    edict_cap_usage = 1
+    resources = {
+        category = edicts
+        cost = {
+            influence = @Edict2Cost_2
+        }
+    }
+    modifier = {
+    }
+    potential = {
+        has_origin = ifo_origin_fleet
+        exists = federation
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = ifo_fed_focus_active
+            nor = {
+                has_edict = ifo_fed_focus_balanced
+                has_edict = ifo_fed_focus_production
+                has_edict = ifo_fed_focus_research
+            }
+        }
+    }
+    effect = {
+        custom_tooltip = edict_ifo_fed_focus_manufacturing_effect
+        hidden_effect = {
+            every_federation_ally = {
+                limit = {
+                    not = {
+                        is_same_empire = prev
+                    }
+                }
+                every_sector = {
+                    set_sector_focus = manufacturing
+                }
+            }
+        }
+    }
+    ai_weight = {
+        weight = 0
+    }
+}
+ifo_fed_focus_research = {
+    length = @Edict10Years_3
+    icon = "GFX_edict_type_policy"
+    edict_cap_usage = 1
+    resources = {
+        category = edicts
+        cost = {
+            influence = @Edict2Cost_1
+        }
+    }
+    modifier = {
+    }
+    potential = {
+        has_origin = ifo_origin_fleet
+        exists = federation
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = ifo_fed_focus_active
+            nor = {
+                has_edict = ifo_fed_focus_balanced
+                has_edict = ifo_fed_focus_production
+                has_edict = ifo_fed_focus_manufacturing
+            }
+        }
+    }
+    effect = {
+        custom_tooltip = edict_ifo_fed_focus_research_effect
+        hidden_effect = {
+            every_federation_ally = {
+                limit = {
+                    not = {
+                        is_same_empire = prev
+                    }
+                }
+                every_sector = {
+                    set_sector_focus = research
+                }
+            }
+        }
+    }
+    ai_weight = {
+        weight = 0
+    }
+}
+ifo_fed_military_training = {
+    length = @Edict10Years_2
+    icon = "GFX_edict_type_policy"
+    edict_cap_usage = 1
+    resources = {
+        category = edicts
+        cost = {
+            influence = @Edict3Cost_2
+        }
+    }
+    modifier = {
+    }
+    potential = {
+        has_origin = ifo_origin_fleet
+        exists = federation
+    }
+    allow = {
+    }
+    effect = {
+        custom_tooltip = edict_ifo_fed_military_training_effect
+        hidden_effect = {
+            every_federation_ally = {
+                limit = {
+                    not = {
+                        is_same_empire = prev
+                    }
+                }
+                add_modifier = {
+                    modifier = ifo_fed_military_training
+                    days = @Edict10Years_2
+                }
+            }
+        }
+    }
+    ai_weight = {
+        weight = 0
+    }
+}
+ifo_fed_cooperation = {
+    length = @Edict10Years_1
+    icon = "GFX_edict_type_policy"
+    edict_cap_usage = 1
+    resources = {
+        category = edicts
+        cost = {
+            influence = @Edict3Cost_1
+        }
+    }
+    modifier = {
+    }
+    potential = {
+        has_origin = ifo_origin_fleet
+        exists = federation
+    }
+    allow = {
+    }
+    effect = {
+        custom_tooltip = edict_ifo_fed_cooperation_effect
+        hidden_effect = {
+            federation = {
+                every_member = {
+                    add_modifier = {
+                        modifier = ifo_fed_cooperation
+                        days = @Edict10Years_1
+                    }
+                }
+            }
+        }
+    }
+    ai_weight = {
+        weight = 0
+    }
+}
