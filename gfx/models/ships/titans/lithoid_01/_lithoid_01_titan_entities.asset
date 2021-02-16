@@ -312,7 +312,7 @@ entity = {
         trail_locators = {
             "exhaust" = {
                 width = @large_trail_W
-                lenght = @large_trail_L
+                length = @large_trail_L
             }
         }
     }

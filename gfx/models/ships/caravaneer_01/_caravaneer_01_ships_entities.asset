@@ -262,23 +262,23 @@ entity = {
         trail_locators = {
             "engine_large_01" = {
                 width = @large_trail_W_2
-                lenght = @large_trail_L_2
+                length = @large_trail_L_2
             }
             "engine_medium_01" = {
                 width = @medium_trail_W_2
-                lenght = @medium_trail_L_3
+                length = @medium_trail_L_3
             }
             "engine_medium_02" = {
                 width = @medium_trail_W_2
-                lenght = @medium_trail_L_3
+                length = @medium_trail_L_3
             }
             "engine_medium_03" = {
                 width = @medium_trail_W_2
-                lenght = @medium_trail_L_3
+                length = @medium_trail_L_3
             }
             "engine_medium_04" = {
                 width = @medium_trail_W_2
-                lenght = @medium_trail_L_3
+                length = @medium_trail_L_3
             }
         }
     }
@@ -480,11 +480,11 @@ entity = {
         trail_locators = {
             "engine_medium_01" = {
                 width = @medium_trail_W_1
-                lenght = @medium_trail_L_2
+                length = @medium_trail_L_2
             }
             "engine_small_01" = {
                 width = @small_trail_W_1
-                lenght = @small_trail_L_1
+                length = @small_trail_L_1
             }
         }
     }
@@ -694,15 +694,15 @@ entity = {
         trail_locators = {
             "engine_large_01" = {
                 width = @large_trail_W_1
-                lenght = @large_trail_L_1
+                length = @large_trail_L_1
             }
             "engine_medium_01" = {
-                width = @mnedium_trail_W
-                lenght = @medium_trail_L_1
+                width = @medium_trail_W_1
+                length = @medium_trail_L_1
             }
             "engine_medium_02" = {
-                width = @mnedium_trail_W
-                lenght = @medium_trail_L_1
+                width = @medium_trail_W_1
+                length = @medium_trail_L_1
             }
         }
     }
