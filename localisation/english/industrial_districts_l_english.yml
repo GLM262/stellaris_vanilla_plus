@@ -1,0 +1,34 @@
+﻿l_english:
+district_industrial:0 "Industrial District"
+district_industrial_plural:0 "Industrial Districts"
+district_industrial_desc:0 "Smelting facilities and factories fill this district, creating advanced products out of raw materials."
+
+district_hab_industrial:0 "Industrial District"
+district_hab_industrial_plural:0 "Industrial Districts"
+district_hab_industrial_desc:0 "Smelting facilities and factories fill this district, creating advanced products out of raw materials."
+
+building_foundry_2_effect_desc:0 "Each §Y$district_industrial$§! on the planet provides §G+1§! £job_foundry£ §Y$job_foundry$§! job"
+building_foundry_2_effect_desc_drone:0 "Each §Y$district_industrial$§! on the planet provides §G+1§! £job_alloy_drone£ §Y$job_alloy_drone$§! job"
+building_foundry_2_effect_desc_fab:0 "Each §Y$district_industrial$§! on the planet provides §G+1§! £job_fabricator£ §Y$job_fabricator$§! job"
+
+building_foundry_3_effect_desc:0 "Each §Y$district_industrial$§!on the planet provides §G+2§! £job_foundry£ §Y$job_foundry$§! jobs"
+building_foundry_3_effect_desc_drone:0 "Each §Y$district_industrial$§! on the planet provides §G+2§! £job_alloy_drone£ §Y$job_alloy_drone$§! jobs"
+building_foundry_3_effect_desc_fab:0 "Each §Y$district_industrial$§! on the planet provides §G+2§! £job_fabricator£ §Y$job_fabricator$§! jobs"
+
+building_factory_2_effect_desc:0 "Each §Y$district_industrial$§! on the planet provides §G+1§! £job_artisan£ §Y$job_artisan$§! job"
+building_factory_2_effect_desc_drone:0 "Each §Y$district_industrial$§! on the planet provides §G+1§! £job_artisan_drone£ §Y$job_artisan_drone$§! job"
+
+building_factory_3_effect_desc:0 "Each §Y$district_industrial$§! on the planet provides §G+2§! £job_artisan£ §Y$job_artisan$§! jobs"
+building_factory_3_effect_desc_drone:0 "Each §Y$district_industrial$§! on the planet provides §G+2§! £job_artisan_drone£ §Y$job_artisan_drone$§! jobs"
+
+building_food_processing_effect_desc:0 "Each §Y$district_farming$§! and §Y$building_hydroponics_farm$§! on the planet provides §G+1§! £job_farmer£ §Y$job_farmer$§! job"
+building_food_processing_effect_desc_acolyte:0 "Each §Y$district_farming$§! and §Y$building_hydroponics_farm$§! on the planet provides §G+1§! £job_agri_drone£ §Y$job_agri_drone$§! job"
+building_food_processing_effect_desc_drone:0 "Each §Y$district_farming$§! and §Y$building_hydroponics_farm$§! on the planet provides §G+1§! £job_fe_acolyte_farm£ §Y$job_fe_acolyte_farm$§! job"
+
+building_mineral_purification_effect_desc:0 "Each §Y$district_mining$§! on the planet provides §G+1§! £job_miner£ §Y$job_miner$§! job"
+building_mineral_purification_effect_desc_acolyte:0 "Each §Y$district_mining$§! on the planet provides §G+1§! £job_fe_acolyte_mine£ §Y$job_fe_acolyte_mine$§! job"
+building_mineral_purification_effect_desc_drone:0 "Each §Y$district_mining$§! on the planet provides §G+1§! £job_mining_drone£ §Y$job_mining_drone$§! job"
+
+building_energy_nexus_effect_desc:0 "Each §Y$district_generator$§! on the planet provides §G+1§! £job_technician£ §Y$job_technician$§! job"
+building_energy_nexus_effect_desc_acolyte:0 "Each §Y$district_generator$§! on the planet provides §G+1§! £job_fe_acolyte_generator£ §Y$job_fe_acolyte_generator$§! job"
+building_energy_nexus_effect_desc_drone:0 "Each §Y$district_generator$§! on the planet provides §G+1§! £job_technician_drone£ §Y$job_technician_drone$§! job"

@@ -1,0 +1,51 @@
+namespace = industrial_districts_start
+country_event = {
+	id = industrial_districts_start.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = default
+	}
+
+	immediate = {
+		every_planet_within_border = {
+			limit = { 
+				is_capital = yes
+			}
+
+			change_planet_size = 2
+
+			add_district = district_industrial
+			add_district = district_industrial
+
+			remove_building = building_foundry_1
+			remove_building = building_factory_1
+		}
+	}
+}
+country_event = {
+	id = autofab_start.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		owner = {
+			has_origin = origin_autofab
+		}
+	}
+	immediate = {
+		every_planet_within_border = {
+			limit = {
+				is_capital = yes
+			}
+			every_owned_pop = {
+				limit = {
+					OR = {
+						has_job = miner
+					}
+				}
+				kill_pop = yes
+			}
+		}
+	}
+}
