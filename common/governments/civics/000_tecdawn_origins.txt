@@ -5,8 +5,10 @@ origin_tecdawn = {
     starting_colony = pc_tecdawn
     preferred_planet_class_neighbor = no
     playable = {
+        always = no
     }
     possible = {
+        always = no
     }
     description = "origin_tooltips_tecdawn_effects"
     flags = {

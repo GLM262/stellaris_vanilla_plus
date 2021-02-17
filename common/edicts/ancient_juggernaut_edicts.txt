@@ -1,7 +1,5 @@
 ancient_jug_origin_edict = {
     icon = "GFX_origins_ancient_juggernaut"
-    resources = {
-    }
     length = -1
     potential = {
         has_country_flag = ancient_jug_can_access_overclock_afternate
