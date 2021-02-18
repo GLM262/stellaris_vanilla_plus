@@ -224,14 +224,14 @@ country_event = {
 				}
 				1 = {
 					random_owned_planet = {
-						limit = {
-							caretaker_presence_on_planet = yes
-							is_homeworld = yes
-							NOT = { has_planet_flag = caretaker_pop_creation_cooldown }
-							num_pops > 0
-							num_pops < 35
-						}
 						if = {
+							limit = {
+								caretaker_presence_on_planet = yes
+								is_homeworld = yes
+								NOT = { has_planet_flag = caretaker_pop_creation_cooldown }
+								num_pops > 0
+								num_pops < 35
+							}
 							set_timed_planet_flag = {
 								flag = caretaker_pop_creation_cooldown
 								days = 180 # FIXME?
@@ -242,6 +242,7 @@ country_event = {
 				}
 				1 = {
 					random_owned_planet = {
+						if = {	
 						limit = {
 							caretaker_presence_on_planet = yes
 							is_homeworld = yes
@@ -249,7 +250,6 @@ country_event = {
 							num_pops > 0
 							num_pops < 40
 						}
-						if = {
 							set_timed_planet_flag = {
 								flag = caretaker_pop_creation_cooldown
 								days = 360 # FIXME?
@@ -260,13 +260,13 @@ country_event = {
 				}
 				1 = {
 					random_owned_planet = {
-						limit = {
-							has_deposit = d_caretaker_hub
-							NOT = { has_planet_flag = caretaker_pop_creation_cooldown }
-							num_pops > 0
-							num_pops < 20
-						}
-						if = {
+						if= {
+							limit = {
+								has_deposit = d_caretaker_hub
+								NOT = { has_planet_flag = caretaker_pop_creation_cooldown }
+								num_pops > 0
+								num_pops < 20
+							}
 							set_timed_planet_flag = {
 								flag = caretaker_pop_creation_cooldown
 								days = 720 # FIXME?
@@ -277,13 +277,13 @@ country_event = {
 				}
 				1 = {
 					random_owned_planet = {
-						limit = {
-							has_deposit = d_caretaker_hub
-							NOT = { has_planet_flag = caretaker_pop_creation_cooldown }
-							num_pops > 0
-							num_pops < 10
-						}
 						if = {
+							limit = {
+								has_deposit = d_caretaker_hub
+								NOT = { has_planet_flag = caretaker_pop_creation_cooldown }
+								num_pops > 0
+								num_pops < 10
+							}
 							set_timed_planet_flag = {
 								flag = caretaker_pop_creation_cooldown
 								days = 360 # FIXME?
