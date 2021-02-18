@@ -16,7 +16,7 @@ trait_liberated_syncretic_proles = {
     species_possible_remove = {
         always = yes
     }
-    icon = "GFX_trait_liberated_syncretic_proles"
+    icon = "gfx\interface\icons\traits\trait_liberated_syncretic.dds"
     allowed_archetypes = {
         BIOLOGICAL
         LITHOID
