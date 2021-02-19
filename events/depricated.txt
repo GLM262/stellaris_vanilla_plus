@@ -1,5 +1,5 @@
 option = {
-    name = fatherland_rogue.100.capture
+    id = fatherland_rogue.100.capture
     custom_tooltip = "fatherland_rogue.100.capture.tooltip"
     trigger = {
         has_policy_flag = iron_curtain
