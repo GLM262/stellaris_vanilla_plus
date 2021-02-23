@@ -37,7 +37,7 @@ trait_industrious = {
 trait_intelligent = {
 	cost = 2
 	potential_crossbreeding_chance = 1.0
-	opposites = { "trait_nerve_stapled" "trait_erudite" "trait_enigmatic_intelligence_poor" "trait_natural_engineers" "trait_natural_physicists" "trait_natural_sociologists" }
+	opposites = { "trait_nerve_stapled" "trait_erudite" "trait_enigmatic_intelligence_poor" }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
 		planet_jobs_engineering_research_produces_mult = 0.1
@@ -56,30 +56,30 @@ trait_thrifty = {
 trait_natural_engineers = {
 	cost = 1
 	potential_crossbreeding_chance = 1.0
-	opposites = { "trait_natural_physicists" "trait_natural_sociologists" "trait_nerve_stapled" "trait_intelligent" }
+	opposites = { "trait_natural_physicists" "trait_natural_sociologists" "trait_nerve_stapled" }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
-		planet_jobs_engineering_research_produces_mult = 0.15
+		planet_jobs_engineering_research_produces_mult = 0.10
 	}
 }
 
 trait_natural_physicists = {
 	cost = 1
 	potential_crossbreeding_chance = 1.0
-	opposites = { "trait_natural_engineers" "trait_natural_sociologists" "trait_nerve_stapled" "trait_intelligent" }
+	opposites = { "trait_natural_engineers" "trait_natural_sociologists" "trait_nerve_stapled" }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
-		planet_jobs_physics_research_produces_mult = 0.15
+		planet_jobs_physics_research_produces_mult = 0.10
 	}
 }
 
 trait_natural_sociologists = {
 	cost = 1
 	potential_crossbreeding_chance = 1.0
-	opposites = { "trait_natural_physicists" "trait_natural_engineers" "trait_nerve_stapled" "trait_intelligent" }
+	opposites = { "trait_natural_physicists" "trait_natural_engineers" "trait_nerve_stapled" }
 	allowed_archetypes = { BIOLOGICAL LITHOID }
 	modifier = {
-		planet_jobs_society_research_produces_mult = 0.15
+		planet_jobs_society_research_produces_mult = 0.10
 	}
 }
 

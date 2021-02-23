@@ -42,6 +42,9 @@ country_event = {
 				limit = {
 					OR = {
 						has_job = miner
+						has_job = technician
+						has_job = farmer
+						has_job = clerk
 					}
 				}
 				kill_pop = yes
