@@ -7,8 +7,10 @@ country_event = {
 	trigger = {
 		is_country_type = default
 	}
-
 	immediate = {
+		country_event = {
+			id = autofab_start.1
+		}
 		every_planet_within_border = {
 			limit = { 
 				is_capital = yes
@@ -28,27 +30,120 @@ country_event = {
 	id = autofab_start.1
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = {
-		owner = {
-			has_origin = origin_autofab
-		}
-	}
 	immediate = {
-		every_planet_within_border = {
+		if = {
 			limit = {
-				is_capital = yes
+				has_origin = origin_autofab
 			}
-			every_owned_pop = {
-				limit = {
-					OR = {
-						has_job = miner
-						has_job = technician
-						has_job = farmer
-						has_job = clerk
+			switch = {
+				trigger = has_ethic
+				ethic_fanatic_authoritarian = {
+					species = {
+						set_living_standard = { country = ROOT type = living_standard_good cooldown = no }
 					}
 				}
-				kill_pop = yes
+				ethic_fanatic_egalitarian = {
+					species = {
+						set_living_standard = { country = ROOT type = living_standard_utopian cooldown = no }
+					}
+				}
+				ethic_fanatic_xenophobe = {
+					species = {
+						set_living_standard = { country = ROOT type = living_standard_good cooldown = no }
+					}
+				}
+				ethic_fanatic_xenophile = {
+					species = {
+						set_living_standard = { country = ROOT type = living_standard_good cooldown = no }
+					}
+				}
+				ethic_fanatic_militarist = {
+					species = {
+						set_living_standard = { country = ROOT type = living_standard_good cooldown = no }
+					}
+				}
+				ethic_fanatic_pacifist = {
+					species = {
+						set_living_standard = { country = ROOT type = living_standard_good cooldown = no }
+					}
+				}
+				ethic_fanatic_spiritualist = {
+					species = {
+						set_living_standard = { country = ROOT type = living_standard_good cooldown = no }
+					}
+				}
+				ethic_fanatic_materialist = {
+					species = {
+						set_living_standard = { country = ROOT type = living_standard_academic_privilege cooldown = no }
+					}
+				}
+				ethic_authoritarian = {
+					species = {
+						set_living_standard = { country = ROOT type = living_standard_good cooldown = no }
+					}
+				}
+				ethic_egalitarian = {
+					species = {
+						set_living_standard = { country = ROOT type = living_standard_utopian cooldown = no }
+					}
+				}
+				ethic_xenophobe = {
+					species = {
+						set_living_standard = { country = ROOT type = living_standard_good cooldown = no }
+					}
+				}
+				ethic_xenophile = {
+					species = {
+						set_living_standard = { country = ROOT type = living_standard_good cooldown = no }
+					}
+				}
+				ethic_militarist = {
+					species = {
+						set_living_standard = { country = ROOT type = living_standard_good cooldown = no }
+					}
+				}
+				ethic_pacifist = {
+					species = {
+						set_living_standard = { country = ROOT type = living_standard_good cooldown = no }
+					}
+				}
+				ethic_spiritualist = {
+					species = {
+						set_living_standard = { country = ROOT type = living_standard_good cooldown = no }
+					}
+				}
+				ethic_materialist = {
+					species = {
+						set_living_standard = { country = ROOT type = living_standard_academic_privilege cooldown = no }
+					}
+				}
+				
 			}
+			capital_scope = {
+				every_owned_pop = {
+					limit = {
+						OR = {
+							has_job = miner
+							has_job = farmer
+							has_job = technician
+							has_job = mining_drone
+							has_job = agri_drone
+							has_job = technician_drone
+							has_job = fabricator
+						}
+					}
+					kill_pop = yes
+				}
+				while = {
+					limit = {
+						planet_size < 20
+					}
+					change_planet_size = 1
+				}
+				set_planet_flag = automation_enabled
+			}	
 		}
-	}
+		
+	}	
 }
+

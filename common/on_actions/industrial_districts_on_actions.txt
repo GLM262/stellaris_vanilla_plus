@@ -1,6 +1,5 @@
 on_game_start_country = {
 	events = {
 		industrial_districts_start.1
-		autofab_start.1
 	}
 }

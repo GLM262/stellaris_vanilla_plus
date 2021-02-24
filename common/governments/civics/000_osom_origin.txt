@@ -3,7 +3,7 @@ osom_origin_subterranean = {
     icon = "gfx/interface/icons/origins/osom_origins_subterranean.dds"
     picture = GFX_osom_origin_subterranean
     potential = {
-        always = yes
+        always = no
     }
     possible = {
         civics = {

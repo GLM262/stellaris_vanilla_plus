@@ -6,6 +6,9 @@ origin_absolute_zero = {
     flags = {
         custom_start_screen
     }
+    potential = {
+        always = no
+    }
     initializers = {
         absolute_zero_system
     }

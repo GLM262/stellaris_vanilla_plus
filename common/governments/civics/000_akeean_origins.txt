@@ -11,6 +11,9 @@ origin_akeean = {
             host_has_dlc = Utopia
         }
     }
+    potential = {
+        always = no
+    }
     possible = {
         ethics = {
             NOT = {

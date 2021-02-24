@@ -2,6 +2,9 @@ origin_paradigm_shift = {
     is_origin = yes
     icon = "gfx/interface/icons/origins/paradigm_shift.dds"
     picture = GFX_origin_paradigm_shift
+    potential = {
+        always = no
+    }
     possible = {
         civics = {
             NOR = {

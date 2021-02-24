@@ -9,6 +9,9 @@ origin_lostspawn = {
     playable = {
         host_has_dlc = "Distant Stars Story Pack"
     }
+    potential = {
+        always = no
+    }
     possible = {
         ethics = {
             OR = {

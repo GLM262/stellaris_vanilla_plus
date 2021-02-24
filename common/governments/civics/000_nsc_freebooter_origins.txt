@@ -13,6 +13,9 @@ origin_nsc_freebooter = {
     playable = {
         host_has_dlc = Apocalypse
     }
+    potential = {
+        always = no
+    }
     possible = {
         ethics = {
             NOR = {

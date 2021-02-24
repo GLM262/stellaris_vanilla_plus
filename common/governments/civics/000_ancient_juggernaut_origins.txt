@@ -6,7 +6,7 @@ origin_ancient_juggernaut = {
         host_has_dlc = "Federations"
     }
     potential = {
-        always = yes
+        always = no
     }
     possible = {
         ethics = {

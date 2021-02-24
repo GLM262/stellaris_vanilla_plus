@@ -3,6 +3,7 @@ origin_bts = {
     icon = "gfx/interface/icons/origins/origins_bts.dds"
     picture = GFX_origin_bts
     possible = {
+        always = no
         ethics = {
             NOR = {
                 text = civic_tooltip_not_pacifist

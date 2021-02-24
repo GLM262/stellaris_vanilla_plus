@@ -6,6 +6,9 @@ origin_narrow_escape = {
     initializers = {
         system_origin_narrow_escape_start
     }
+    potential = {
+        always = no
+    }
     traits = {
         trait = trait_narrow_escape_species
     }
