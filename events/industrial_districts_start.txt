@@ -8,9 +8,6 @@ country_event = {
 		is_country_type = default
 	}
 	immediate = {
-		country_event = {
-			id = autofab_start.1
-		}
 		every_planet_within_border = {
 			limit = { 
 				is_capital = yes
@@ -24,13 +21,6 @@ country_event = {
 			remove_building = building_foundry_1
 			remove_building = building_factory_1
 		}
-	}
-}
-country_event = {
-	id = autofab_start.1
-	hide_window = yes
-	is_triggered_only = yes
-	immediate = {
 		if = {
 			limit = {
 				has_origin = origin_autofab
@@ -130,6 +120,7 @@ country_event = {
 							has_job = agri_drone
 							has_job = technician_drone
 							has_job = fabricator
+							has_job = clerk
 						}
 					}
 					kill_pop = yes
@@ -143,7 +134,6 @@ country_event = {
 				set_planet_flag = automation_enabled
 			}	
 		}
-		
-	}	
+	}
 }
 
